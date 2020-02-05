@@ -1,11 +1,32 @@
 import tkinter
+from tkinter.colorchooser import askcolor
 
 import color
-import moreColors
+import button
 
-###########################################################################################################
-###########################################################################################################
-###########################################################################################################
+########################################################################################################################
+#########################################################################################################################
+########################################################################################################################
+
+class Modes:
+    DRAWING = 0
+    STAMP = 1
+
+
+class Pen:
+    LINE = 0
+    CIRCLE = 1
+    SQUARE = 2
+
+
+class Stamp:
+    HOUSE = 0
+    FLOWER = 1
+
+
+########################################################################################################################
+#########################################################################################################################
+########################################################################################################################
 
 COLORS = ['snow', 'ghost white', 'white smoke', 'gainsboro', 'floral white', 'old lace',
           'linen', 'antique white', 'papaya whip', 'blanched almond', 'bisque', 'peach puff',
@@ -84,41 +105,40 @@ COLORS = ['snow', 'ghost white', 'white smoke', 'gainsboro', 'floral white', 'ol
           'grey84', 'grey85', 'grey86', 'grey87', 'grey88', 'grey89', 'grey90', 'grey91', 'grey92',
           'grey93', 'grey94', 'grey95', 'grey97', 'grey98', 'grey99']
 
-canvasWidth, canvasHeight = 700, 600
+canvasHeight, canvasWidth = 600, 700
 
-canvas = tkinter.Canvas(width = canvasWidth, height = canvasHeight, background = "white")
+canvas = tkinter.Canvas(width=canvasWidth, height=canvasHeight, background="white")
 canvas.pack()
-
-r = 5
-
-rLabel = tkinter.Label(text = "r")
-rLabel.pack()
-
-rEntry = tkinter.Entry()
-rEntry.pack()
-
-pLabel = tkinter.Label(text ="p")
-pLabel.pack()
-
-pEntry = tkinter.Entry()
-pEntry.pack()
-
-px, py = 0, 0
-
-drawingColor = 'black'
-
-mc = False
-
-moreColorsBG = None
-
-lines = []
 
 colors = []
 colors2 = []
+drawings = []
 
-###########################################################################################################
-###########################################################################################################
-###########################################################################################################
+moreColor = button.create(0, 0, 50, 50, 0, "gray", "MORE", canvas)  # TODO coords moreColor
+currentColor = button.create(50, 0, 50, 50, 0, "red", "CUR", canvas)  # TODO coords currentColor
+lastColor = button.create(100, 0, 50, 50, 0, "blue", "LAST", canvas)  # TODO coords lastColor
+RGB = button.create(150, 0, 50, 50, 0, "green", "RGB", canvas)  # TODO coords lastColor
+
+mode = Modes.DRAWING
+pen = Pen.LINE
+stamp = Stamp.FLOWER
+
+entryPen = tkinter.Entry()
+entryPen.pack()
+entryStamp = tkinter.Entry()
+entryStamp.pack()
+
+penWidth = 5
+px, py = 0, 0
+
+mc = False
+
+moreColorBG = "white"
+drawingColor = "black"
+
+########################################################################################################################
+#########################################################################################################################
+########################################################################################################################
 
 def drawMoreColors():
     global colors2, moreColorsBG
@@ -138,73 +158,8 @@ def deleteMoreColors():
     canvas.delete(moreColorsBG)
     colors2.clear()
 
-
-def drag(event):
-    global px, py, r, lines
-    x, y = event.x, event.y
-    if not mc:
-        if y > 50 and py > 50:
-            try:
-                r = int(rEntry.get())
-            except:
-                pass
-            lines.append(canvas.create_line(x, y, px, py, width = r, fill = drawingColor))
-            lines.append(canvas.create_oval(x-r//2, y-r//2, x+r//2, y+r//2, width = 0, fill = drawingColor))
-        else:
-            pass
-    px, py = x, y
-
-def motion(event):
-    global px, py
-    px = event.x
-    py = event.y
-
-def delete(event):
-    global lines, mc
-    if not mc:
-        for line in lines:
-            canvas.delete(line)
-        lines.clear()
-
-def leftClick(event):
-    global drawingColor, mc
-    x, y = event.x, event.y
-    if mc:
-        for button in colors2:
-            if (button.x <= x <= button.x+button.width) and (button.y <= y <= button.y+button.height):
-                drawingColor = button.color
-                mc = False
-                deleteMoreColors()
-                break
-    else:
-        for button in colors:
-            if (button.x < x < button.x+button.width) and (button.y < y < button.y+button.height):
-                drawingColor = button.color
-                break
-        if (more.x <= x <= more.x+more.width) and (more.y <= y <= more.y+more.height):
-            drawMoreColors()
-            mc = True
-
-###########################################################################################################
-###########################################################################################################
-###########################################################################################################
-
-colors.append(color.create(0, 0, 50, 50, 'white', 1, canvas))
-colors.append(color.create(50, 0, 50, 50, 'black', 1, canvas))
-colors.append(color.create(100, 0, 50, 50, 'red', 1, canvas))
-colors.append(color.create(150, 0, 50, 50, 'blue', 1, canvas))
-colors.append(color.create(200, 0, 50, 50, 'green', 1, canvas))
-colors.append(color.create(250, 0, 50, 50, 'yellow', 1, canvas))
-
-more = moreColors.create(300, 0, 50, 50, 1, canvas)
-
-###########################################################################################################
-###########################################################################################################
-###########################################################################################################
-
-canvas.bind_all("<B1-Motion>", drag)
-canvas.bind_all("<Motion>", motion)
-canvas.bind_all("<Delete>", delete)
-canvas.bind_all("<Button-1>", leftClick)
+########################################################################################################################
+#########################################################################################################################
+########################################################################################################################
 
 canvas.mainloop()
