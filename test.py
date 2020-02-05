@@ -1,13 +1,14 @@
 import tkinter
 from random import randint
 
+
 class create:
     def __init__(self, x, y, width, height, activColor, bgColor, min, max, cur, bgBorder, border, canvas, mode):
         self.x = x
         self.y = y
         self.width = width
         self.height = height
-        self.activColor = activColor
+        self.activeColor = activColor
         self.bgColor = bgColor
         self.min = min
         self.max = max
@@ -15,59 +16,65 @@ class create:
         self.canvas = canvas
         self.bgBorder = bgBorder
         self.border = border
-        self.bg = self.canvas.create_rectangle(self.x, self.y, self.x+self.width, self.y+self.height, fill = self.bgColor, width = self.bgBorder)
-        self.slider = self.canvas.create_rectangle(self.x+self.bgBorder, self.y+self.bgBorder, self.x+self.getX(), self.y+self.height, fill = self.activColor, width = self.border)
+        self.bg = self.canvas.create_rectangle(self.x, self.y, self.x + self.width, self.y + self.height,
+                                               fill=self.bgColor, width=self.bgBorder)
+        self.slider = self.canvas.create_rectangle(self.x + self.bgBorder, self.y + self.bgBorder, self.x + self.getX(),
+                                                   self.y + self.height, fill=self.activeColor, width=self.border)
         self.mode = mode
 
     def getX(self):
-        percent = (self.cur-self.min)/(self.max-self.min)
-        return self.width*percent
+        percent = (self.cur - self.min) / (self.max - self.min)
+        return self.width * percent
 
     def getCur(self, step):
-        percent = (self.getX()+step)/self.width
-        return (self.max-self.min)*percent+self.min
+        percent = (self.getX() + step) / self.width
+        return (self.max - self.min) * percent + self.min
 
     def move(self, x):
-        step = x-(self.x+self.getX())
+        step = x - (self.x + self.getX())
         self.cur = self.getCur(step)
         if self.mode == 'r':
             try:
-                self.activColor = f'#{int(self.cur):02x}0000'
+                self.activeColor = f'#{int(self.cur):02x}0000'
             except:
                 pass
         elif self.mode == 'g':
             try:
-                self.activColor = f'#00{int(self.cur):02x}00'
+                self.activeColor = f'#00{int(self.cur):02x}00'
             except:
                 pass
         elif self.mode == 'b':
             try:
-                self.activColor = f'#0000{int(self.cur):02x}'
+                self.activeColor = f'#0000{int(self.cur):02x}'
             except:
                 pass
         self.canvas.delete(self.slider)
         self.slider = None
-        self.slider = self.canvas.create_rectangle(self.x+self.bgBorder, self.y+self.bgBorder, self.x+self.getX(), self.y+self.height, fill = self.activColor, width = self.border)
+        self.slider = self.canvas.create_rectangle(self.x + self.bgBorder, self.y + self.bgBorder, self.x + self.getX(),
+                                                   self.y + self.height, fill=self.activeColor, width=self.border)
         self.canvas.update()
 
-canvas = tkinter.Canvas(width = 1500, height = 600)
+
+canvas = tkinter.Canvas(width=1500, height=600)
 canvas.pack()
 
 sliders = []
 
-rec = canvas.create_rectangle(0, 30, 1500, 700, fill = 'white')
+rec = canvas.create_rectangle(0, 30, 1500, 700, fill='white')
 
 sliders.append(create(0, 0, 1500, 20, 'red', 'white', 0, 256, 10, 0, 0, canvas, 'r'))
 sliders.append(create(0, 20, 1500, 20, 'green', 'white', 0, 256, 10, 0, 0, canvas, 'g'))
 sliders.append(create(0, 40, 1500, 20, 'blue', 'white', 0, 256, 10, 0, 0, canvas, 'b'))
 
+
 def drag(event):
     x, y = event.x, event.y
     for slider in sliders:
-        if (slider.x < x < slider.x+slider.width) and (slider.y < y < slider.y+slider.height):
+        if (slider.x < x < slider.x + slider.width) and (slider.y < y < slider.y + slider.height):
             slider.move(x)
-            canvas.itemconfig(rec, fill = f'#{int(sliders[0].cur):02x}{int(sliders[1].cur):02x}{int(sliders[2].cur):02x}')
+            canvas.itemconfig(rec, fill=f'#{int(sliders[0].cur):02x}{int(sliders[1].cur):02x}{int(sliders[2].cur):02x}')
             print(slider.cur, slider.mode)
+
 
 smerR = 1
 speedR = randint(1, 5)
@@ -76,11 +83,12 @@ speedG = randint(1, 5)
 smerB = 1
 speedB = randint(1, 5)
 
-def start(event = None):
+
+def start(event=None):
     global smerB, smerG, smerR, speedB, speedG, speedR
-    sliders[0].move(sliders[0].getX()+1*smerR*speedR)
-    sliders[1].move(sliders[1].getX()+1*smerG*speedG)
-    sliders[2].move(sliders[2].getX()+1*smerB*speedB)
+    sliders[0].move(sliders[0].getX() + 1 * smerR * speedR)
+    sliders[1].move(sliders[1].getX() + 1 * smerG * speedG)
+    sliders[2].move(sliders[2].getX() + 1 * smerB * speedB)
 
     if (int(sliders[0].cur) >= 251) or (int(sliders[0].cur) <= 4):
         smerR *= -1
@@ -103,9 +111,10 @@ def start(event = None):
             sliders[2].cur = 250
         else:
             sliders[2].cur = 5
-    canvas.itemconfig(rec, fill = f'#{int(sliders[0].cur):02x}{int(sliders[1].cur):02x}{int(sliders[2].cur):02x}')
+    canvas.itemconfig(rec, fill=f'#{int(sliders[0].cur):02x}{int(sliders[1].cur):02x}{int(sliders[2].cur):02x}')
     canvas.update()
     canvas.after(1, start)
+
 
 # start()
 
