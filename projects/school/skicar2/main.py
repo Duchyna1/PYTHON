@@ -103,8 +103,9 @@ COLORS = ['snow', 'ghost white', 'white smoke', 'gainsboro', 'floral white', 'ol
           'grey93', 'grey94', 'grey95', 'grey97', 'grey98', 'grey99']
 
 canvasHeight, canvasWidth = 600, 700
+canvasBG = "white"
 
-canvas = tkinter.Canvas(width=canvasWidth, height=canvasHeight, background="white")
+canvas = tkinter.Canvas(width=canvasWidth, height=canvasHeight, background=canvasBG)
 canvas.pack()
 
 colors = []
@@ -168,30 +169,64 @@ def motion(event):
     px = event.x
     py = event.y
 
-def drag(event):
+def dragL(event):
     global drawings, penWidth, px, py
     x, y = event.x, event.y
-    if not mc:
-        if mode == Modes.DRAWING:
-            if pen == Pen.LINE:
-                try:
-                    penWidth = int(entryPen.get())
-                except:
-                    pass
-                drawings.append(canvas.create_line(x, y, px, py, width=penWidth, fill=drawingColor))
-                drawings.append(canvas.create_oval(x - penWidth // 2, y - penWidth // 2, x + penWidth // 2, y + penWidth // 2, width=0, fill=drawingColor))
-            if pen == Pen.CIRCLE:
-                try:
-                    penWidth = int(entryPen.get())
-                except:
-                    pass
-                drawings.append(canvas.create_oval(x - penWidth // 2, y - penWidth // 2, x + penWidth // 2, y + penWidth // 2, width=0, fill=drawingColor))
-            if pen == Pen.SQUARE:
-                try:
-                    penWidth = int(entryPen.get())
-                except:
-                    pass
-                drawings.append(canvas.create_rectangle(x - penWidth // 2, y - penWidth // 2, x + penWidth // 2, y + penWidth // 2, width=0, fill=drawingColor))
+    if y > 50 and py > 50:
+        if not mc:
+            if mode == Modes.DRAWING:
+                if pen == Pen.LINE:
+                    try:
+                        penWidth = int(entryPen.get())
+                    except:
+                        pass
+                    drawings.append(canvas.create_line(x, y, px, py, width=penWidth, fill=drawingColor))
+                    drawings.append(canvas.create_oval(x - penWidth // 2, y - penWidth // 2, x + penWidth // 2, y + penWidth // 2, width=0, fill=drawingColor))
+                if pen == Pen.CIRCLE:
+                    try:
+                        penWidth = int(entryPen.get())
+                    except:
+                        pass
+                    drawings.append(canvas.create_oval(x - penWidth // 2, y - penWidth // 2, x + penWidth // 2, y + penWidth // 2, width=0, fill=drawingColor))
+                if pen == Pen.SQUARE:
+                    try:
+                        penWidth = int(entryPen.get())
+                    except:
+                        pass
+                    drawings.append(canvas.create_rectangle(x - penWidth // 2, y - penWidth // 2, x + penWidth // 2, y + penWidth // 2, width=0, fill=drawingColor))
+    px, py = x, y
+
+def dragR(event):
+    global drawings, penWidth, px, py
+    x, y = event.x, event.y
+    if y > 50 and py > 50:
+        if not mc:
+            if mode == Modes.DRAWING:
+                if pen == Pen.LINE:
+                    try:
+                        penWidth = int(entryPen.get())
+                    except:
+                        pass
+                    drawings.append(canvas.create_line(x, y, px, py, width=penWidth, fill=canvasBG))
+                    drawings.append(
+                        canvas.create_oval(x - penWidth // 2, y - penWidth // 2, x + penWidth // 2, y + penWidth // 2,
+                                           width=0, fill=canvasBG))
+                if pen == Pen.CIRCLE:
+                    try:
+                        penWidth = int(entryPen.get())
+                    except:
+                        pass
+                    drawings.append(
+                        canvas.create_oval(x - penWidth // 2, y - penWidth // 2, x + penWidth // 2, y + penWidth // 2,
+                                           width=0, fill=canvasBG))
+                if pen == Pen.SQUARE:
+                    try:
+                        penWidth = int(entryPen.get())
+                    except:
+                        pass
+                    drawings.append(
+                        canvas.create_rectangle(x - penWidth // 2, y - penWidth // 2, x + penWidth // 2, y + penWidth // 2,
+                                                width=0, fill=canvasBG))
     px, py = x, y
 
 def leftClick(event):
@@ -226,9 +261,6 @@ def leftClick(event):
                 pass
             print("house")
 
-def rightClick(event):
-    pass
-
 ########################################################################################################################
 #########################################################################################################################
 ########################################################################################################################
@@ -240,8 +272,8 @@ def rightClick(event):
 
 canvas.bind_all("<Delete>", delete)
 canvas.bind_all("<Motion>", motion)
-canvas.bind_all("<B1-Motion>", drag)
+canvas.bind_all("<B1-Motion>", dragL)
+canvas.bind_all("<B3-Motion>", dragR)
 canvas.bind_all("<Button-1>", leftClick)
-canvas.bind_all("<Button-3>", rightClick)
 
 canvas.mainloop()
