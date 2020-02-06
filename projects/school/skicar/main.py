@@ -1,18 +1,37 @@
 import tkinter
+from tkinter.colorchooser import askcolor
 
 import color
-import moreColors
+import button
+import penStamp
 
-###########################################################################################################
-###########################################################################################################
-###########################################################################################################
+########################################################################################################################
+#########################################################################################################################
+########################################################################################################################
+
+class Modes:
+    DRAWING = 0
+    STAMP = 1
+
+class Pen:
+    LINE = 0
+    CIRCLE = 1
+    SQUARE = 2
+
+class Stamp:
+    HOUSE = 0
+    FLOWER = 1
+
+########################################################################################################################
+#########################################################################################################################
+########################################################################################################################
 
 COLORS = ['snow', 'ghost white', 'white smoke', 'gainsboro', 'floral white', 'old lace',
           'linen', 'antique white', 'papaya whip', 'blanched almond', 'bisque', 'peach puff',
           'navajo white', 'lemon chiffon', 'mint cream', 'azure', 'alice blue', 'lavender',
           'lavender blush', 'misty rose', 'dark slate gray', 'dim gray', 'slate gray',
           'light slate gray', 'gray', 'light gray', 'midnight blue', 'navy', 'cornflower blue', 'dark slate blue',
-          'slate blue', 'medium slate blue', 'light slate blue', 'medium blue', 'royal blue',  'blue',
+          'slate blue', 'medium slate blue', 'light slate blue', 'medium blue', 'royal blue', 'blue',
           'dodger blue', 'deep sky blue', 'sky blue', 'light sky blue', 'steel blue', 'light steel blue',
           'light blue', 'powder blue', 'pale turquoise', 'dark turquoise', 'medium turquoise', 'turquoise',
           'cyan', 'light cyan', 'cadet blue', 'medium aquamarine', 'aquamarine', 'dark green', 'dark olive green',
@@ -84,50 +103,55 @@ COLORS = ['snow', 'ghost white', 'white smoke', 'gainsboro', 'floral white', 'ol
           'grey84', 'grey85', 'grey86', 'grey87', 'grey88', 'grey89', 'grey90', 'grey91', 'grey92',
           'grey93', 'grey94', 'grey95', 'grey97', 'grey98', 'grey99']
 
-canvasWidth, canvasHeight = 700, 600
+canvasHeight, canvasWidth = 600, 700
+canvasBG = "white"
 
-canvas = tkinter.Canvas(width = canvasWidth, height = canvasHeight, background = "white")
+canvas = tkinter.Canvas(width=canvasWidth, height=canvasHeight, background=canvasBG)
 canvas.pack()
-
-r = 5
-
-rLabel = tkinter.Label(text = "r")
-rLabel.pack()
-
-rEntry = tkinter.Entry()
-rEntry.pack()
-
-pLabel = tkinter.Label(text ="p")
-pLabel.pack()
-
-pEntry = tkinter.Entry()
-pEntry.pack()
-
-px, py = 0, 0
-
-drawingColor = 'black'
-
-mc = False
-
-moreColorsBG = None
-
-lines = []
 
 colors = []
 colors2 = []
+drawings = []
 
-###########################################################################################################
-###########################################################################################################
-###########################################################################################################
+moreColor = button.create(6*40, 20, 40, 40, 0, "gray", "MORE", canvas)  # TODO coords moreColor
+currentColor = button.create(0, 0, canvasWidth, 20, 0, "black", "CURRENT", canvas)  # TODO coords currentColor
+lastColor = button.create(canvasWidth-40, 20, 40, 40, 0, "white", "LAST", canvas)  # TODO coords lastColor
+RGB = button.create(7*40, 20, 40, 40, 0, "light gray", "RGB", canvas)  # TODO coords lastColor
+
+modeLine = penStamp.create(8*40, 20, 40, 40, 0, canvas, "LINE")
+modeCircle = penStamp.create(9*40, 20, 40, 40, 0, canvas, "CIRCLE")
+modeSquare = penStamp.create(10*40, 20, 40, 40, 0, canvas, "SQUARE")
+
+mode = Modes.DRAWING
+pen = Pen.LINE
+stamp = Stamp.HOUSE
+
+entryPen = tkinter.Entry()
+entryPen.pack()
+entryStamp = tkinter.Entry()
+entryStamp.pack()
+
+penWidth = 5
+stampWidth = 20
+px, py = 0, 0
+
+mc = False
+
+moreColorBG = "white"
+drawingColor = "black"
+
+########################################################################################################################
+#########################################################################################################################
+########################################################################################################################
 
 def drawMoreColors():
     global colors2, moreColorsBG
     stepX, stepY = 35, 25
-    moreColorsBG = canvas.create_rectangle(0, 0, canvasWidth, canvasHeight, fill = "white", width = 0)
+    moreColorsBG = canvas.create_rectangle(0, 0, canvasWidth, canvasHeight, fill="white", width=0)
     for y in range(0, canvasHeight, stepY):
         for x in range(0, canvasWidth, stepX):
             try:
-                colors2.append(color.create(x, y, stepX, stepY, COLORS[(y//stepY)*(canvasWidth//stepX)+(x//stepX)], 1, canvas))
+                colors2.append(color.create(x, y, stepX, stepY, COLORS[(y // stepY) * (canvasWidth // stepX) + (x // stepX)], 1, canvas))
             except:
                 break
 
@@ -138,73 +162,157 @@ def deleteMoreColors():
     canvas.delete(moreColorsBG)
     colors2.clear()
 
-
-def drag(event):
-    global px, py, r, lines
-    x, y = event.x, event.y
+def delete(event):
+    global drawings
     if not mc:
-        if y > 50 and py > 50:
-            try:
-                r = int(rEntry.get())
-            except:
-                pass
-            lines.append(canvas.create_line(x, y, px, py, width = r, fill = drawingColor))
-            lines.append(canvas.create_oval(x-r//2, y-r//2, x+r//2, y+r//2, width = 0, fill = drawingColor))
-        else:
-            pass
-    px, py = x, y
+        for drawing in drawings:
+            canvas.delete(drawing)
+        drawings.clear()
 
 def motion(event):
     global px, py
     px = event.x
     py = event.y
 
-def delete(event):
-    global lines, mc
-    if not mc:
-        for line in lines:
-            canvas.delete(line)
-        lines.clear()
+def dragL(event):
+    global drawings, penWidth, px, py
+    x, y = event.x, event.y
+    if y > 60 and py > 60:
+        if not mc:
+            if mode == Modes.DRAWING:
+                if pen == Pen.LINE:
+                    try:
+                        penWidth = int(entryPen.get())
+                    except:
+                        penWidth = 5
+                    drawings.append(canvas.create_line(x, y, px, py, width=penWidth, fill=drawingColor))
+                    drawings.append(canvas.create_oval(x - penWidth // 2, y - penWidth // 2, x + penWidth // 2, y + penWidth // 2, width=0, fill=drawingColor))
+                if pen == Pen.CIRCLE:
+                    try:
+                        penWidth = int(entryPen.get())
+                    except:
+                        penWidth = 5
+                    drawings.append(canvas.create_oval(x - penWidth // 2, y - penWidth // 2, x + penWidth // 2, y + penWidth // 2, width=0, fill=drawingColor))
+                if pen == Pen.SQUARE:
+                    try:
+                        penWidth = int(entryPen.get())
+                    except:
+                        penWidth = 5
+                    drawings.append(canvas.create_rectangle(x - penWidth // 2, y - penWidth // 2, x + penWidth // 2, y + penWidth // 2, width=0, fill=drawingColor))
+    px, py = x, y
+
+def dragR(event):
+    global drawings, penWidth, px, py
+    x, y = event.x, event.y
+    if y > 60 and py > 60:
+        if not mc:
+            if mode == Modes.DRAWING:
+                if pen == Pen.LINE:
+                    try:
+                        penWidth = int(entryPen.get())
+                    except:
+                        penWidth = 5
+                    drawings.append(canvas.create_line(x, y, px, py, width=penWidth, fill=canvasBG))
+                    drawings.append(
+                        canvas.create_oval(x - penWidth // 2, y - penWidth // 2, x + penWidth // 2, y + penWidth // 2,
+                                           width=0, fill=canvasBG))
+                if pen == Pen.CIRCLE:
+                    try:
+                        penWidth = int(entryPen.get())
+                    except:
+                        penWidth = 5
+                    drawings.append(
+                        canvas.create_oval(x - penWidth // 2, y - penWidth // 2, x + penWidth // 2, y + penWidth // 2,
+                                           width=0, fill=canvasBG))
+                if pen == Pen.SQUARE:
+                    try:
+                        penWidth = int(entryPen.get())
+                    except:
+                        penWidth = 5
+                    drawings.append(
+                        canvas.create_rectangle(x - penWidth // 2, y - penWidth // 2, x + penWidth // 2, y + penWidth // 2,
+                                                width=0, fill=canvasBG))
+    px, py = x, y
 
 def leftClick(event):
-    global drawingColor, mc
+    global stampWidth, mc, drawingColor, lastColor, currentColor, pen
     x, y = event.x, event.y
-    if mc:
-        for button in colors2:
-            if (button.x <= x <= button.x+button.width) and (button.y <= y <= button.y+button.height):
-                drawingColor = button.color
+    if not mc:
+        for color in colors:
+            if (color.x < x < color.x+color.width) and (color.y < y < color.y+color.height):
+                lastColor.color = drawingColor
+                canvas.itemconfig(lastColor.button, fill=lastColor.color)
+                drawingColor = color.color
+                currentColor.color = drawingColor
+                canvas.itemconfig(currentColor.button, fill=currentColor.color)
+        if (moreColor.x < x < moreColor.x+moreColor.width) and (moreColor.y < y < moreColor.y+moreColor.height):
+            mc = True
+            drawMoreColors()
+        elif (lastColor.x < x < lastColor.x+lastColor.width) and (lastColor.y < y < lastColor.y+lastColor.height):
+            drawingColor = lastColor.color
+            lastColor.color = currentColor.color
+            canvas.itemconfig(lastColor.button, fill=lastColor.color)
+            currentColor.color = drawingColor
+            canvas.itemconfig(currentColor.button, fill=currentColor.color)
+        elif (RGB.x < x < RGB.x+RGB.width) and (RGB.y < y < RGB.y+RGB.height):
+            c = askcolor()
+            if c[-1] != None:
+                drawingColor = c[-1]
+                lastColor.color = drawingColor
+                canvas.itemconfig(lastColor.button, fill=lastColor.color)
+                currentColor.color = drawingColor
+                canvas.itemconfig(currentColor.button, fill=currentColor.color)
+        elif (modeLine.x < x < modeLine.x+modeLine.width) and (modeLine.y < y < modeLine.y+modeLine.height):
+            pen = Pen.LINE
+        elif (modeCircle.x < x < modeCircle.x+modeCircle.width) and (modeCircle.y < y < modeCircle.y+modeCircle.height):
+            pen = Pen.CIRCLE
+        elif (modeSquare.x < x < modeSquare.x+modeSquare.width) and (modeSquare.y < y < modeSquare.y+modeSquare.height):
+            pen = Pen.SQUARE
+        elif mode == Modes.STAMP:
+            if stamp == Stamp.FLOWER:
+                try:
+                    stampWidth = int(entryStamp.get())
+                except:
+                    stampWidth = 20
+                print('flower')
+            if stamp == Stamp.HOUSE:
+                try:
+                    stampWidth = int(entryStamp.get())
+                except:
+                    stampWidth = 20
+                print("house")
+    elif mc:
+        for color in colors2:
+            if (color.x < x < color.x+color.width) and (color.y < y < color.y+color.height):
+                lastColor.color = drawingColor
+                canvas.itemconfig(lastColor.button, fill = lastColor.color)
+                drawingColor = color.color
+                currentColor.color = drawingColor
+                canvas.itemconfig(currentColor.button, fill = currentColor.color)
                 mc = False
                 deleteMoreColors()
                 break
-    else:
-        for button in colors:
-            if (button.x < x < button.x+button.width) and (button.y < y < button.y+button.height):
-                drawingColor = button.color
-                break
-        if (more.x <= x <= more.x+more.width) and (more.y <= y <= more.y+more.height):
-            drawMoreColors()
-            mc = True
 
-###########################################################################################################
-###########################################################################################################
-###########################################################################################################
 
-colors.append(color.create(0, 0, 50, 50, 'white', 1, canvas))
-colors.append(color.create(50, 0, 50, 50, 'black', 1, canvas))
-colors.append(color.create(100, 0, 50, 50, 'red', 1, canvas))
-colors.append(color.create(150, 0, 50, 50, 'blue', 1, canvas))
-colors.append(color.create(200, 0, 50, 50, 'green', 1, canvas))
-colors.append(color.create(250, 0, 50, 50, 'yellow', 1, canvas))
+########################################################################################################################
+#########################################################################################################################
+########################################################################################################################
 
-more = moreColors.create(300, 0, 50, 50, 1, canvas)
+colors.append(color.create(0, 20, 40, 40, 'black', 0, canvas))
+colors.append(color.create(40, 20, 40, 40, 'red', 0, canvas))
+colors.append(color.create(80, 20, 40, 40, 'green', 0, canvas))
+colors.append(color.create(120, 20, 40, 40, 'blue', 0, canvas))
+colors.append(color.create(160, 20, 40, 40, 'yellow', 0, canvas))
+colors.append(color.create(200, 20, 40, 40, 'brown', 0, canvas))
 
-###########################################################################################################
-###########################################################################################################
-###########################################################################################################
+########################################################################################################################
+#########################################################################################################################
+########################################################################################################################
 
-canvas.bind_all("<B1-Motion>", drag)
-canvas.bind_all("<Motion>", motion)
 canvas.bind_all("<Delete>", delete)
+canvas.bind_all("<Motion>", motion)
+canvas.bind_all("<B1-Motion>", dragL)
+canvas.bind_all("<B3-Motion>", dragR)
 canvas.bind_all("<Button-1>", leftClick)
 
 canvas.mainloop()
