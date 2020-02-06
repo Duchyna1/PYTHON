@@ -12,17 +12,14 @@ class Modes:
     DRAWING = 0
     STAMP = 1
 
-
 class Pen:
     LINE = 0
     CIRCLE = 1
     SQUARE = 2
 
-
 class Stamp:
     HOUSE = 0
     FLOWER = 1
-
 
 ########################################################################################################################
 #########################################################################################################################
@@ -33,7 +30,7 @@ COLORS = ['snow', 'ghost white', 'white smoke', 'gainsboro', 'floral white', 'ol
           'navajo white', 'lemon chiffon', 'mint cream', 'azure', 'alice blue', 'lavender',
           'lavender blush', 'misty rose', 'dark slate gray', 'dim gray', 'slate gray',
           'light slate gray', 'gray', 'light gray', 'midnight blue', 'navy', 'cornflower blue', 'dark slate blue',
-          'slate blue', 'medium slate blue', 'light slate blue', 'medium blue', 'royal blue',  'blue',
+          'slate blue', 'medium slate blue', 'light slate blue', 'medium blue', 'royal blue', 'blue',
           'dodger blue', 'deep sky blue', 'sky blue', 'light sky blue', 'steel blue', 'light steel blue',
           'light blue', 'powder blue', 'pale turquoise', 'dark turquoise', 'medium turquoise', 'turquoise',
           'cyan', 'light cyan', 'cadet blue', 'medium aquamarine', 'aquamarine', 'dark green', 'dark olive green',
@@ -120,8 +117,8 @@ lastColor = button.create(100, 0, 50, 50, 0, "blue", "LAST", canvas)  # TODO coo
 RGB = button.create(150, 0, 50, 50, 0, "green", "RGB", canvas)  # TODO coords lastColor
 
 mode = Modes.DRAWING
-pen = Pen.LINE
-stamp = Stamp.FLOWER
+pen = Pen.SQUARE
+stamp = Stamp.HOUSE
 
 entryPen = tkinter.Entry()
 entryPen.pack()
@@ -129,6 +126,7 @@ entryStamp = tkinter.Entry()
 entryStamp.pack()
 
 penWidth = 5
+stampWidth = 20
 px, py = 0, 0
 
 mc = False
@@ -143,11 +141,11 @@ drawingColor = "black"
 def drawMoreColors():
     global colors2, moreColorsBG
     stepX, stepY = 35, 25
-    moreColorsBG = canvas.create_rectangle(0, 0, canvasWidth, canvasHeight, fill = "white", width = 0)
+    moreColorsBG = canvas.create_rectangle(0, 0, canvasWidth, canvasHeight, fill="white", width=0)
     for y in range(0, canvasHeight, stepY):
         for x in range(0, canvasWidth, stepX):
             try:
-                colors2.append(color.create(x, y, stepX, stepY, COLORS[(y//stepY)*(canvasWidth//stepX)+(x//stepX)], 1, canvas))
+                colors2.append(color.create(x, y, stepX, stepY, COLORS[(y // stepY) * (canvasWidth // stepX) + (x // stepX)], 1, canvas))
             except:
                 break
 
@@ -158,8 +156,75 @@ def deleteMoreColors():
     canvas.delete(moreColorsBG)
     colors2.clear()
 
+def delete(event):
+    global drawings
+    if not mc:
+        for drawing in drawings:
+            canvas.delete(drawing)
+        drawings.clear()
+
+def motion(event):
+    global px, py
+    px = event.x
+    py = event.y
+
+def drag(event):
+    global drawings, penWidth, stampWidth, px, py
+    x, y = event.x, event.y
+    if not mc:
+        if mode == Modes.DRAWING:
+            if pen == Pen.LINE:
+                try:
+                    penWidth = int(entryPen.get())
+                except:
+                    pass
+                drawings.append(canvas.create_line(x, y, px, py, width=penWidth, fill=drawingColor))
+                drawings.append(canvas.create_oval(x - penWidth // 2, y - penWidth // 2, x + penWidth // 2, y + penWidth // 2, width=0, fill=drawingColor))
+            if pen == Pen.CIRCLE:
+                try:
+                    penWidth = int(entryPen.get())
+                except:
+                    pass
+                drawings.append(canvas.create_oval(x - penWidth // 2, y - penWidth // 2, x + penWidth // 2, y + penWidth // 2, width=0, fill=drawingColor))
+            if pen == Pen.SQUARE:
+                try:
+                    penWidth = int(entryPen.get())
+                except:
+                    pass
+                drawings.append(canvas.create_rectangle(x - penWidth // 2, y - penWidth // 2, x + penWidth // 2, y + penWidth // 2, width=0, fill=drawingColor))
+    px, py = x, y
+
+def leftClick(event):
+    if mode == Modes.STAMP:
+        if stamp == Stamp.FLOWER:
+            try:
+                stampWidth = int(entryStamp.get())
+            except:
+                pass
+            print('flower')
+        if stamp == Stamp.HOUSE:
+            try:
+                stampWidth = int(entryStamp.get())
+            except:
+                pass
+            print("house")
+
+def rightClick(event):
+    pass
+
 ########################################################################################################################
 #########################################################################################################################
 ########################################################################################################################
+
+
+########################################################################################################################
+#########################################################################################################################
+########################################################################################################################
+
+canvas.bind_all("<Delete>", delete)
+canvas.bind_all("<Motion>", motion)
+canvas.bind_all("<B1-Motion>", drag)
+canvas.bind_all("<Button-1>", leftClick)
+canvas.bind_all("<Button-3>", rightClick)
 
 canvas.mainloop()
