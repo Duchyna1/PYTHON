@@ -8,5 +8,5 @@ class create:
         self.canvas = canvas
         self.color = color
         self.text = text
-        self.canvas.create_rectangle(x, y, x+width, y+height, fill = self.color, width = border)
-        self.canvas.create_text(x+width//2, y+height//2, text = self.text)
+        self.button = self.canvas.create_rectangle(x, y, x+width, y+height, fill = self.color, width = border)
+        self.text = self.canvas.create_text(x+width//2, y+height//2, text = self.text)

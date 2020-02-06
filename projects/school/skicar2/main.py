@@ -111,13 +111,13 @@ colors = []
 colors2 = []
 drawings = []
 
-moreColor = button.create(0, 0, 50, 50, 0, "gray", "MORE", canvas)  # TODO coords moreColor
+moreColor = button.create(1, 1, 49, 49, 0, "gray", "MORE", canvas)  # TODO coords moreColor
 currentColor = button.create(50, 0, 50, 50, 0, "red", "CUR", canvas)  # TODO coords currentColor
 lastColor = button.create(100, 0, 50, 50, 0, "blue", "LAST", canvas)  # TODO coords lastColor
 RGB = button.create(150, 0, 50, 50, 0, "green", "RGB", canvas)  # TODO coords lastColor
 
 mode = Modes.DRAWING
-pen = Pen.SQUARE
+pen = Pen.LINE
 stamp = Stamp.HOUSE
 
 entryPen = tkinter.Entry()
@@ -169,7 +169,7 @@ def motion(event):
     py = event.y
 
 def drag(event):
-    global drawings, penWidth, stampWidth, px, py
+    global drawings, penWidth, px, py
     x, y = event.x, event.y
     if not mc:
         if mode == Modes.DRAWING:
@@ -195,7 +195,24 @@ def drag(event):
     px, py = x, y
 
 def leftClick(event):
-    if mode == Modes.STAMP:
+    global stampWidth, mc, drawingColor, lastColor, currentColor
+    x, y = event.x, event.y
+    if not mc:
+        if (moreColor.x < x < moreColor.x+moreColor.width) and (moreColor.y < y < moreColor.y+moreColor.height):
+            mc = True
+            drawMoreColors()
+    elif mc:
+        for color in colors2:
+            if (color.x < x < color.x+color.width) and (color.y < y < color.y+color.height):
+                lastColor.color = drawingColor
+                canvas.itemconfig(lastColor.button, fill = lastColor.color)
+                drawingColor = color.color
+                currentColor.color = drawingColor
+                canvas.itemconfig(currentColor.button, fill = currentColor.color)
+                mc = False
+                deleteMoreColors()
+                break
+    elif mode == Modes.STAMP:
         if stamp == Stamp.FLOWER:
             try:
                 stampWidth = int(entryStamp.get())
