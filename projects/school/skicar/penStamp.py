@@ -26,10 +26,15 @@ class create:
         self.canvas.create_oval(self.x+self.width/100*20, self.y+self.height/100*20, self.x+self.width/100*80, self.y+self.height/100*80, fill = "black")
 
     def square(self):
-        self.canvas.create_rectangle(self.x + self.width / 100 * 20, self.y + self.height / 100 * 20, self.x + self.width / 100 * 80, self.y + self.height / 100 * 80, fill="black")
+        self.canvas.create_rectangle(self.x+self.width/100*20, self.y+self.height/100*20, self.x+self.width/100*80, self.y+self.height/100*80, fill = "black")
 
-    def hause(self):
-        pass
+    def house(self):
+        self.canvas.create_rectangle(self.x+self.width/100*20, self.y+self.height/100*40, self.x+self.width/100*80, self.y+self.height/100*80, fill = "red", width = 0)
+        self.canvas.create_polygon(self.x+self.width/100*20, self.y+self.height/100*40, self.x+self.width/100*80, self.y+self.height/100*40, self.x+self.height/100*50, self.y+self.height/100*20, fill = "brown", width = 0)
 
     def flower(self):
-        pass
+        self.canvas.create_oval(self.x+self.width/100*20, self.y+self.height/100*20, self.x+self.width/100*50, self.y+self.height/100*50, fill = "red", width = 0)
+        self.canvas.create_oval(self.x+self.width/100*20, self.y+self.height/100*80, self.x+self.width/100*50, self.y+self.height/100*50, fill = "red", width = 0)
+        self.canvas.create_oval(self.x+self.width/100*80, self.y+self.height/100*20, self.x+self.width/100*50, self.y+self.height/100*50, fill = "red", width = 0)
+        self.canvas.create_oval(self.x+self.width/100*80, self.y+self.height/100*80, self.x+self.width/100*50, self.y+self.height/100*50, fill = "red", width = 0)
+        self.canvas.create_oval(self.x+self.width/100*35, self.y+self.height/100*35, self.x+self.width/100*65, self.y+self.height/100*65, fill = "yellow", width = 0)

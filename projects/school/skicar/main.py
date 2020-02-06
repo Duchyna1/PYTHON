@@ -113,21 +113,28 @@ colors = []
 colors2 = []
 drawings = []
 
-moreColor = button.create(6*40, 20, 40, 40, 0, "gray", "MORE", canvas)  # TODO coords moreColor
-currentColor = button.create(0, 0, canvasWidth, 20, 0, "black", "CURRENT", canvas)  # TODO coords currentColor
-lastColor = button.create(canvasWidth-40, 20, 40, 40, 0, "white", "LAST", canvas)  # TODO coords lastColor
-RGB = button.create(7*40, 20, 40, 40, 0, "light gray", "RGB", canvas)  # TODO coords lastColor
+moreColor = button.create(6*40, 20, 40, 40, 0, "gray", "MORE", canvas)
+currentColor = button.create(0, 0, canvasWidth, 20, 0, "black", "CURRENT", canvas)
+lastColor = button.create(canvasWidth-40, 20, 40, 40, 0, "white", "LAST", canvas)
+RGB = button.create(7*40, 20, 40, 40, 0, "light gray", "RGB", canvas)
 
 modeLine = penStamp.create(8*40, 20, 40, 40, 0, canvas, "LINE")
 modeCircle = penStamp.create(9*40, 20, 40, 40, 0, canvas, "CIRCLE")
 modeSquare = penStamp.create(10*40, 20, 40, 40, 0, canvas, "SQUARE")
+modeHouse = penStamp.create(11*40, 20, 40, 40, 0, canvas, "HOUSE")
+modeFlower = penStamp.create(12*40, 20, 40, 40, 0, canvas, "FLOWER")
+currentMode = penStamp.create(canvasWidth - 80, 20, 40, 40, 0, canvas, "LINE")
 
 mode = Modes.DRAWING
 pen = Pen.LINE
 stamp = Stamp.HOUSE
 
+labelPen = tkinter.Label(text = "Pen width")
+labelPen.pack()
 entryPen = tkinter.Entry()
 entryPen.pack()
+labelStamp = tkinter.Label(text = "Stamp size")
+labelStamp.pack()
 entryStamp = tkinter.Entry()
 entryStamp.pack()
 
@@ -206,36 +213,35 @@ def dragR(event):
     x, y = event.x, event.y
     if y > 60 and py > 60:
         if not mc:
-            if mode == Modes.DRAWING:
-                if pen == Pen.LINE:
-                    try:
-                        penWidth = int(entryPen.get())
-                    except:
-                        penWidth = 5
-                    drawings.append(canvas.create_line(x, y, px, py, width=penWidth, fill=canvasBG))
-                    drawings.append(
-                        canvas.create_oval(x - penWidth // 2, y - penWidth // 2, x + penWidth // 2, y + penWidth // 2,
-                                           width=0, fill=canvasBG))
-                if pen == Pen.CIRCLE:
-                    try:
-                        penWidth = int(entryPen.get())
-                    except:
-                        penWidth = 5
-                    drawings.append(
-                        canvas.create_oval(x - penWidth // 2, y - penWidth // 2, x + penWidth // 2, y + penWidth // 2,
-                                           width=0, fill=canvasBG))
-                if pen == Pen.SQUARE:
-                    try:
-                        penWidth = int(entryPen.get())
-                    except:
-                        penWidth = 5
-                    drawings.append(
-                        canvas.create_rectangle(x - penWidth // 2, y - penWidth // 2, x + penWidth // 2, y + penWidth // 2,
-                                                width=0, fill=canvasBG))
+            if pen == Pen.LINE:
+                try:
+                    penWidth = int(entryPen.get())
+                except:
+                    penWidth = 5
+                drawings.append(canvas.create_line(x, y, px, py, width=penWidth, fill=canvasBG))
+                drawings.append(
+                    canvas.create_oval(x - penWidth // 2, y - penWidth // 2, x + penWidth // 2, y + penWidth // 2,
+                                       width=0, fill=canvasBG))
+            if pen == Pen.CIRCLE:
+                try:
+                    penWidth = int(entryPen.get())
+                except:
+                    penWidth = 5
+                drawings.append(
+                    canvas.create_oval(x - penWidth // 2, y - penWidth // 2, x + penWidth // 2, y + penWidth // 2,
+                                       width=0, fill=canvasBG))
+            if pen == Pen.SQUARE:
+                try:
+                    penWidth = int(entryPen.get())
+                except:
+                    penWidth = 5
+                drawings.append(
+                    canvas.create_rectangle(x - penWidth // 2, y - penWidth // 2, x + penWidth // 2, y + penWidth // 2,
+                                            width=0, fill=canvasBG))
     px, py = x, y
 
 def leftClick(event):
-    global stampWidth, mc, drawingColor, lastColor, currentColor, pen
+    global stampWidth, mc, drawingColor, lastColor, currentColor, pen, mode, stamp, currentMode
     x, y = event.x, event.y
     if not mc:
         for color in colors:
@@ -263,24 +269,44 @@ def leftClick(event):
                 currentColor.color = drawingColor
                 canvas.itemconfig(currentColor.button, fill=currentColor.color)
         elif (modeLine.x < x < modeLine.x+modeLine.width) and (modeLine.y < y < modeLine.y+modeLine.height):
+            mode = Modes.DRAWING
             pen = Pen.LINE
+            currentMode = penStamp.create(canvasWidth - 80, 20, 40, 40, 0, canvas, "LINE")
         elif (modeCircle.x < x < modeCircle.x+modeCircle.width) and (modeCircle.y < y < modeCircle.y+modeCircle.height):
+            mode = Modes.DRAWING
             pen = Pen.CIRCLE
+            currentMode = penStamp.create(canvasWidth - 80, 20, 40, 40, 0, canvas, "CIRCLE")
         elif (modeSquare.x < x < modeSquare.x+modeSquare.width) and (modeSquare.y < y < modeSquare.y+modeSquare.height):
+            mode = Modes.DRAWING
             pen = Pen.SQUARE
+            currentMode = penStamp.create(canvasWidth - 80, 20, 40, 40, 0, canvas, "SQUARE")
+        elif (modeHouse.x < x < modeHouse.x+modeHouse.width) and (modeHouse.y < y < modeHouse.y+modeHouse.height):
+            mode = Modes.STAMP
+            stamp = Stamp.HOUSE
+            currentMode = penStamp.create(canvasWidth - 80, 20, 40, 40, 0, canvas, "HOUSE")
+        elif (modeFlower.x < x < modeFlower.x+modeFlower.width) and (modeFlower.y < y < modeFlower.y+modeFlower.height):
+            mode = Modes.STAMP
+            stamp = Stamp.FLOWER
+            currentMode = penStamp.create(canvasWidth - 80, 20, 40, 40, 0, canvas, "FLOWER")
         elif mode == Modes.STAMP:
-            if stamp == Stamp.FLOWER:
-                try:
-                    stampWidth = int(entryStamp.get())
-                except:
-                    stampWidth = 20
-                print('flower')
-            if stamp == Stamp.HOUSE:
-                try:
-                    stampWidth = int(entryStamp.get())
-                except:
-                    stampWidth = 20
-                print("house")
+            if y > 60:
+                if stamp == Stamp.FLOWER:
+                    try:
+                        stampWidth = int(entryStamp.get())
+                    except:
+                        stampWidth = 20
+                    drawings.append(canvas.create_oval(x+stampWidth, y+stampWidth, x, y, fill = "red", widt = 0))
+                    drawings.append(canvas.create_oval(x-stampWidth, y+stampWidth, x, y, fill = "red", widt = 0))
+                    drawings.append(canvas.create_oval(x+stampWidth, y-stampWidth, x, y, fill = "red", widt = 0))
+                    drawings.append(canvas.create_oval(x-stampWidth, y-stampWidth, x, y, fill = "red", widt = 0))
+                    drawings.append(canvas.create_oval(x-stampWidth/2, y-stampWidth/2, x+stampWidth/2, y+stampWidth/2, fill = "yellow", width = 0))
+                if stamp == Stamp.HOUSE:
+                    try:
+                        stampWidth = int(entryStamp.get())
+                    except:
+                        stampWidth = 20
+                    drawings.append(canvas.create_rectangle(x+stampWidth, y+stampWidth, x-stampWidth, y-stampWidth, fill = "red", width = 0))
+                    drawings.append(canvas.create_polygon(x-stampWidth, y-stampWidth, x+stampWidth, y-stampWidth, x, y-stampWidth*2, fill = "brown", width = 0))
     elif mc:
         for color in colors2:
             if (color.x < x < color.x+color.width) and (color.y < y < color.y+color.height):
@@ -292,7 +318,6 @@ def leftClick(event):
                 mc = False
                 deleteMoreColors()
                 break
-
 
 ########################################################################################################################
 #########################################################################################################################
