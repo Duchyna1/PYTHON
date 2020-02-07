@@ -18,6 +18,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/projects/school/skicar2" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
@@ -26,7 +27,28 @@
       <recent name="C:\Users\Matus\Desktop\GIT\PYTHON\projects\school\skicar2" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.SkusaniePlusMinusDoStop">
+    <configuration name="SkusaniePlusMinusDoSto" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PYTHON" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/projects/math" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\Matus\Desktop\GIT\PYTHON\projects\math\SkusaniePlusMinusDoSto.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PYTHON" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -40,6 +62,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/projects/school/skicar2/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PYTHON" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/projects/games/sudoku" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/projects/games/sudoku/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -69,7 +112,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="mines" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PYTHON" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -77,11 +120,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/projects/games" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/projects/games/mines.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -92,9 +135,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.SkusaniePlusMinusDoStop" />
+        <item itemvalue="Python.mines" />
+        <item itemvalue="Python.main (2)" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.main (1)" />
-        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -120,29 +165,49 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1580931785937" />
-    <state width="1345" height="182" key="GridCell.Tab.0.bottom" timestamp="1581023511198">
+    <state width="1345" height="118" key="GridCell.Tab.0.bottom" timestamp="1581109614544">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1345" height="182" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1581023511198" />
-    <state width="1345" height="182" key="GridCell.Tab.0.center" timestamp="1581023511197">
+    <state width="1345" height="2" key="GridCell.Tab.0.bottom.inPresentationMode" timestamp="1581055025639">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1345" height="182" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1581023511197" />
-    <state width="1345" height="182" key="GridCell.Tab.0.left" timestamp="1581023511197">
+    <state width="1345" height="2" key="GridCell.Tab.0.bottom.inPresentationMode/0.0.1366.738@0.0.1366.738" timestamp="1581055025639" />
+    <state width="1345" height="118" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1581109614544" />
+    <state width="1345" height="118" key="GridCell.Tab.0.center" timestamp="1581109614543">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1345" height="182" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1581023511197" />
-    <state width="1345" height="182" key="GridCell.Tab.0.right" timestamp="1581023511198">
+    <state width="1345" height="2" key="GridCell.Tab.0.center.inPresentationMode" timestamp="1581055025639">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1345" height="182" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1581023511198" />
+    <state width="1345" height="2" key="GridCell.Tab.0.center.inPresentationMode/0.0.1366.738@0.0.1366.738" timestamp="1581055025639" />
+    <state width="1345" height="118" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1581109614543" />
+    <state width="1345" height="118" key="GridCell.Tab.0.left" timestamp="1581109614543">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1345" height="2" key="GridCell.Tab.0.left.inPresentationMode" timestamp="1581055025639">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1345" height="2" key="GridCell.Tab.0.left.inPresentationMode/0.0.1366.738@0.0.1366.738" timestamp="1581055025639" />
+    <state width="1345" height="118" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1581109614543" />
+    <state width="1345" height="118" key="GridCell.Tab.0.right" timestamp="1581109614544">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1345" height="2" key="GridCell.Tab.0.right.inPresentationMode" timestamp="1581055025639">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1345" height="2" key="GridCell.Tab.0.right.inPresentationMode/0.0.1366.738@0.0.1366.738" timestamp="1581055025639" />
+    <state width="1345" height="118" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1581109614544" />
     <state x="184" y="12" key="SettingsEditor" timestamp="1580919659674">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="184" y="12" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1580919659674" />
-    <state x="378" y="194" key="com.intellij.ide.util.TipDialog" timestamp="1580971543803">
+    <state x="378" y="194" key="com.intellij.ide.util.TipDialog" timestamp="1581106578629">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="378" y="194" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1580971543803" />
+    <state x="378" y="194" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1581106578629" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1581109286324">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1581109286324" />
   </component>
 </project>
