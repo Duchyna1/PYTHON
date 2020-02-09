@@ -27,8 +27,8 @@
       <recent name="C:\Users\Matus\Desktop\GIT\PYTHON\projects\school\skicar2" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.SkusaniePlusMinusDoStop">
-    <configuration name="SkusaniePlusMinusDoSto" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.SkusaniePlusMinusDoSto (1)">
+    <configuration name="SkusaniePlusMinusDoSto (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PYTHON" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -40,7 +40,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\Matus\Desktop\GIT\PYTHON\projects\math\SkusaniePlusMinusDoSto.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/projects/math/SkusaniePlusMinusDoSto.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -135,10 +135,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.SkusaniePlusMinusDoStop" />
+        <item itemvalue="Python.SkusaniePlusMinusDoSto (1)" />
+        <item itemvalue="Python.main" />
         <item itemvalue="Python.mines" />
         <item itemvalue="Python.main (2)" />
-        <item itemvalue="Python.main" />
         <item itemvalue="Python.main (1)" />
       </list>
     </recent_temporary>
@@ -161,50 +161,54 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="137" y="25" width="1092" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1580936175323" />
+    <state x="413" y="117" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581241263256">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="413" y="117" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.738@0.0.1366.738" timestamp="1581241263256" />
     <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1580931785937">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1580931785937" />
-    <state width="1345" height="118" key="GridCell.Tab.0.bottom" timestamp="1581112782985">
+    <state width="1345" height="118" key="GridCell.Tab.0.bottom" timestamp="1581241289376">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.bottom.inPresentationMode" timestamp="1581055025639">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.bottom.inPresentationMode/0.0.1366.738@0.0.1366.738" timestamp="1581055025639" />
-    <state width="1345" height="118" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1581112782985" />
-    <state width="1345" height="118" key="GridCell.Tab.0.center" timestamp="1581112782985">
+    <state width="1345" height="118" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1581241289376" />
+    <state width="1345" height="118" key="GridCell.Tab.0.center" timestamp="1581241289376">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.center.inPresentationMode" timestamp="1581055025639">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.center.inPresentationMode/0.0.1366.738@0.0.1366.738" timestamp="1581055025639" />
-    <state width="1345" height="118" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1581112782985" />
-    <state width="1345" height="118" key="GridCell.Tab.0.left" timestamp="1581112782985">
+    <state width="1345" height="118" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1581241289376" />
+    <state width="1345" height="118" key="GridCell.Tab.0.left" timestamp="1581241289376">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.left.inPresentationMode" timestamp="1581055025639">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.left.inPresentationMode/0.0.1366.738@0.0.1366.738" timestamp="1581055025639" />
-    <state width="1345" height="118" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1581112782985" />
-    <state width="1345" height="118" key="GridCell.Tab.0.right" timestamp="1581112782985">
+    <state width="1345" height="118" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1581241289376" />
+    <state width="1345" height="118" key="GridCell.Tab.0.right" timestamp="1581241289376">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.right.inPresentationMode" timestamp="1581055025639">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.right.inPresentationMode/0.0.1366.738@0.0.1366.738" timestamp="1581055025639" />
-    <state width="1345" height="118" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1581112782985" />
+    <state width="1345" height="118" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1581241289376" />
     <state x="184" y="12" key="SettingsEditor" timestamp="1580919659674">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="184" y="12" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1580919659674" />
-    <state x="378" y="194" key="com.intellij.ide.util.TipDialog" timestamp="1581106578629">
+    <state x="378" y="194" key="com.intellij.ide.util.TipDialog" timestamp="1581189879998">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="378" y="194" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1581106578629" />
+    <state x="378" y="194" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1581189879998" />
     <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1581109286324">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
