@@ -3,6 +3,9 @@ from selenium.webdriver.chrome.options import Options
 from time import sleep
 from random import random
 
+from selenium.webdriver.common.keys import Keys
+
+
 class bot:
 
     def __init__(self):
@@ -28,10 +31,10 @@ class bot:
 
     def toMemes(self):
         self.driver.find_element_by_xpath('//*[@id="container"]/div/div[1]/div[1]/div/nav/ul/li[4]/button').click()
+        sleep(2)
+        self.driver.find_element_by_xpath('//*[@id="container"]/div/nav/ul/div/div[2]/form/input[2]').send_keys('memes')
         sleep(1)
-        self.driver.find_element_by_xpath('//*[@id="container"]/div/nav/ul/div/label/div/input').send_keys('memes')
-        sleep(1)
-        self.driver.find_element_by_xpath('//*[@id="container"]/div/nav/ul/div/div/ul/li[1]/a').click()
+        self.driver.find_element_by_xpath('//*[@id="container"]/div/nav/ul/div/div[2]/form/input[2]').send_keys(Keys.RETURN)
         sleep(1)
         self.driver.find_element_by_xpath(
             '//*[@id="container"]/div/div[1]/div[1]/div/div/div/div/nav/div[1]/div[1]/div/div[1]/span[2]').click()
