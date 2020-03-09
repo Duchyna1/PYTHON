@@ -5,7 +5,7 @@ window = tkinter.Canvas(height = 500, width = 500)
 window.pack()
 
 krok = 10
-sirka = 5
+sirka = 2
 
 def reset(self=None):
     farba = 'black'

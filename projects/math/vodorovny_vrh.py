@@ -1,5 +1,5 @@
-Vo = int(input('Vo: '))
 h = int(input('H: '))
+Vo = int(input("Vo: "))
 
 import tkinter as tk
 
@@ -18,7 +18,6 @@ predY = y
 
 textX = bt.create_text(x, height//2, text = x, fill = 'white')
 textY = bt.create_text(width//2, y, text = y, fill = 'white')
-
 
 def play(event = None):
     global t, h, predX, predY, textX, textY

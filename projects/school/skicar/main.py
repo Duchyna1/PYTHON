@@ -317,6 +317,7 @@ def leftClick(event):
                 canvas.itemconfig(currentColor.button, fill = currentColor.color)
                 mc = False
                 deleteMoreColors()
+                print(drawingColor)
                 break
 
 ########################################################################################################################
