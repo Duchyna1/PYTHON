@@ -1,18 +1,19 @@
 from projects.games.fakeMindustry.building import building
-from projects.games.fakeMindustry.things import Materials, Buildings
+from projects.games.fakeMindustry.things import Materials, Buildings, Stats
 
 
 class cell:
-    def __init__(self, parent, x, y, width, height, material = None, building = None):
+    def __init__(self, parent, x, y, width, height, material=None, b=None, level=0):
         self.parent = parent
         self.x, self.y = x, y
         self.width, self.height = width, height
         self.material = material
-        self.building = building
+        self.building = b
 
         for m in Materials.all:
             if m == material:
-                self.rec = self.parent.create_rectangle(self.x, self.y, self.x+self.width, self.y+self.height, fill=Materials.colors[m])
+                self.rec = self.parent.create_rectangle(self.x, self.y, self.x+self.width, self.y+self.height,
+                                                        fill=Materials.colors[m])
                 break
 
         if building is None:
@@ -20,7 +21,7 @@ class cell:
         else:
             for b in Buildings.all:
                 if b == building:
-                    self.setBuilding(b)
+                    self.setBuilding(b, level=level)
                     break
 
     def setMaterial(self, material):
@@ -28,13 +29,12 @@ class cell:
         for m in Materials.all:
             if material == m:
                 self.rec = self.parent.create_rectangle(self.x, self.y, self.x + self.width, self.y + self.height,
-                                                    fill=Materials.colors[m])
+                                                        fill=Materials.colors[m])
                 break
-        self.parent.update()
 
-    def setBuilding(self, new):
+    def setBuilding(self, new, level=0):
         if new is None:
             self.building.delete()
             self.building = None
         else:
-            self.building = building(self.parent, self.x, self.y, self.width, self.height, new)
+            self.building = building(self.parent, self.x, self.y, self.width, self.height, new, self.material, level=level)
