@@ -7,7 +7,7 @@ class Stats:
 class Buildings:
     MINE = 'mine'
     all = [MINE]
-s
+
 
 class Materials:
     STONE = 'stone'
