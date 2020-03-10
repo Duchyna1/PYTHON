@@ -5,7 +5,7 @@ class building:
         self.width, self.height = width, height
         self.type = type
         if self.type == "mine":
-            self.building = self.parent.create_text(self.x+self.width//2, self.y+self.height//2, text='T')
+            self.building = self.parent.create_text(self.x+self.width//2, self.y+self.height//2, text='M')
             self.parent.update()
 
     def delete(self):
