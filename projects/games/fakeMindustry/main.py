@@ -4,7 +4,7 @@ from random import randint
 from opensimplex import OpenSimplex
 
 from projects.games.fakeMindustry.cell import cell
-from projects.games.fakeMindustry.things import Materials, Buildings, Stats
+from projects.games.fakeMindustry.things import Materials, Buildings
 
 ########################################################################################################################
 
@@ -24,8 +24,6 @@ cells = [[None for x in range(0, windowWidth, cellWidth)] for y in range(0, wind
 print('DONE!')
 buildings = []
 
-
-
 ########################################################################################################################
 
 def clickL(event):
@@ -37,14 +35,12 @@ def clickL(event):
         buildings.remove(cells[y][x].building)
         cells[y][x].setBuilding(None)
 
-
 def clickR(event):
     x, y = event.x//cellWidth, event.y//cellHeight
     if cells[y][x].material == Materials.STONE:
         cells[y][x].setMaterial(Materials.IRON)
     elif cells[y][x].material == Materials.IRON:
         cells[y][x].setMaterial(Materials.STONE)
-
 
 def tick():
     global ticks
@@ -57,7 +53,6 @@ def tick():
 def noise(nx, ny, big, seed):
     gen = OpenSimplex(seed=seed)
     return gen.noise2d(nx*big, ny*big)
-
 
 def generateOre(material, n, p, b):
     seed = randint(0, 100000)
@@ -82,22 +77,24 @@ def generateOre(material, n, p, b):
             if cells[y][x] is None:
                 cells[y][x] = cell(game, x * cellWidth, y * cellHeight, cellWidth, cellHeight, Materials.STONE)
 
+def generate():
+    print('Generating COAL... ', end='')
+    generateOre(Materials.COAL, 100, 0.8, 3)
+    print('DONE!')
+    print('Generating IRON... ', end='')
+    generateOre(Materials.IRON, 100, 0.88, 8)
+    print('DONE!')
+    print('Generating GOLD... ', end='')
+    generateOre(Materials.GOLD, 100, 0.9, 10)
+    print('DONE!')
+    print('Generating DIAMONDS... ', end='')
+    generateOre(Materials.DIAMOND, 100, 0.95, 15)
+    print('DONE!')
+
 
 ########################################################################################################################
 
-print('Generating COAL... ', end='')
-generateOre(Materials.COAL, 100, 0.8, 3)
-print('DONE!')
-print('Generating IRON... ', end='')
-generateOre(Materials.IRON, 100, 0.88, 8)
-print('DONE!')
-print('Generating GOLD... ', end='')
-generateOre(Materials.GOLD, 100, 0.9, 10)
-print('DONE!')
-print('Generating DIAMONDS... ', end='')
-generateOre(Materials.DIAMOND, 100, 0.95, 15)
-print('DONE!')
-
+generate()
 tick()
 
 ########################################################################################################################

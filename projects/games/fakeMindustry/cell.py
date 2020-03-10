@@ -1,5 +1,5 @@
 from projects.games.fakeMindustry.building import building
-from projects.games.fakeMindustry.things import Materials, Buildings, Stats
+from projects.games.fakeMindustry.things import Materials, Buildings
 
 
 class cell:
@@ -37,4 +37,5 @@ class cell:
             self.building.delete()
             self.building = None
         else:
-            self.building = building(self.parent, self.x, self.y, self.width, self.height, new, self.material, level=level)
+            self.building = building(self.parent, self.x, self.y, self.width, self.height, new, self.material,
+                                     level=level)

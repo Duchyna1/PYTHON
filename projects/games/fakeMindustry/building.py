@@ -24,5 +24,5 @@ class building:
         self.parent.update()
 
     def action(self, ticks):
-        if ticks%Stats.MINE['speed'][self.level] == 0:
+        if ticks % Stats.MINE['speed'][self.level] == 0:
             self.inventory += 1
