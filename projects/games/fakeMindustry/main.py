@@ -29,7 +29,7 @@ buildings = []
 def clickL(event):
     x, y = event.x//cellWidth, event.y//cellHeight
     if cells[y][x].building is None:
-        cells[y][x].setBuilding(Buildings.MINE, level=3)
+        cells[y][x].setBuilding(Buildings.MINE)
         buildings.append(cells[y][x].building)
     elif cells[y][x].building.type == Buildings.MINE:
         buildings.remove(cells[y][x].building)
