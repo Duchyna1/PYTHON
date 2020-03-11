@@ -1,11 +1,16 @@
 class Stats:
     MINE = {
-        "speed": [50, 30, 20, 10]
+        'speed': [50, 30, 20, 10]
+    }
+    CONVEYOR = {
+        'speed': [10, 6, 4, 2],
+        'color': ['red', 'green', 'blue', 'gold']
     }
 
 
 class Buildings:
     MINE = 'mine'
+    CONVEYOR = 'conveyor'
     all = [MINE]
 
 

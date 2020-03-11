@@ -12,7 +12,7 @@ ticks = 0
 tickSpeed = 100
 
 windowWidth, windowHeight = 1000, 600
-widthCells, heightCells = 100, 60
+widthCells, heightCells = 10, 10 #100, 60
 
 game = tkinter.Canvas(width=windowWidth, height=windowHeight+100)
 game.pack()
@@ -29,11 +29,29 @@ buildings = []
 def clickL(event):
     x, y = event.x//cellWidth, event.y//cellHeight
     if cells[y][x].building is None:
-        cells[y][x].setBuilding(Buildings.MINE)
+        cells[y][x].setBuilding(Buildings.CONVEYOR, orientation=0)
         buildings.append(cells[y][x].building)
-    elif cells[y][x].building.type == Buildings.MINE:
+    elif cells[y][x].orientation == 0:
+        cells[y][x].building.delete()
+        buildings.remove(cells[y][x].building)
+        cells[y][x].setBuilding(Buildings.CONVEYOR, orientation=1, level=1)
+        buildings.append(cells[y][x].building)
+    elif cells[y][x].orientation == 1:
+        cells[y][x].building.delete()
+        buildings.remove(cells[y][x].building)
+        cells[y][x].setBuilding(Buildings.CONVEYOR, orientation=2, level=2)
+        buildings.append(cells[y][x].building)
+    elif cells[y][x].orientation == 2:
+        cells[y][x].building.delete()
+        buildings.remove(cells[y][x].building)
+        cells[y][x].setBuilding(Buildings.CONVEYOR, orientation=3, level=3)
+        buildings.append(cells[y][x].building)
+    elif cells[y][x].orientation == 3:
+        cells[y][x].building.delete()
         buildings.remove(cells[y][x].building)
         cells[y][x].setBuilding(None)
+    print(buildings)
+
 
 def clickR(event):
     x, y = event.x//cellWidth, event.y//cellHeight
@@ -74,21 +92,27 @@ def generateOre(material, n, p, b):
         for x in range(windowWidth // cellWidth):
             if values[y][x] > (max - min) * p + min:
                 cells[y][x] = cell(game, x * cellWidth, y * cellHeight, cellWidth, cellHeight, material)
+                game.update()
             if cells[y][x] is None:
                 cells[y][x] = cell(game, x * cellWidth, y * cellHeight, cellWidth, cellHeight, Materials.STONE)
 
 def generate():
+    game.update()
     print('Generating COAL... ', end='')
     generateOre(Materials.COAL, 100, 0.8, 3)
+    game.update()
     print('DONE!')
     print('Generating IRON... ', end='')
     generateOre(Materials.IRON, 100, 0.88, 8)
+    game.update()
     print('DONE!')
     print('Generating GOLD... ', end='')
     generateOre(Materials.GOLD, 100, 0.9, 10)
+    game.update()
     print('DONE!')
     print('Generating DIAMONDS... ', end='')
     generateOre(Materials.DIAMOND, 100, 0.95, 15)
+    game.update()
     print('DONE!')
 
 
