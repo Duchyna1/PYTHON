@@ -12,7 +12,7 @@ ticks = 0
 tickSpeed = 100
 
 windowWidth, windowHeight = 1000, 600
-widthCells, heightCells = 10, 10 #100, 60
+widthCells, heightCells = 10, 6 #100, 60
 
 game = tkinter.Canvas(width=windowWidth, height=windowHeight+100)
 game.pack()
@@ -31,34 +31,23 @@ def clickL(event):
     if cells[y][x].building is None:
         cells[y][x].setBuilding(Buildings.CONVEYOR, orientation=0)
         buildings.append(cells[y][x].building)
-    elif cells[y][x].orientation == 0:
-        cells[y][x].building.delete()
-        buildings.remove(cells[y][x].building)
-        cells[y][x].setBuilding(Buildings.CONVEYOR, orientation=1, level=1)
-        buildings.append(cells[y][x].building)
-    elif cells[y][x].orientation == 1:
-        cells[y][x].building.delete()
-        buildings.remove(cells[y][x].building)
-        cells[y][x].setBuilding(Buildings.CONVEYOR, orientation=2, level=2)
-        buildings.append(cells[y][x].building)
-    elif cells[y][x].orientation == 2:
-        cells[y][x].building.delete()
-        buildings.remove(cells[y][x].building)
-        cells[y][x].setBuilding(Buildings.CONVEYOR, orientation=3, level=3)
-        buildings.append(cells[y][x].building)
-    elif cells[y][x].orientation == 3:
+    elif cells[y][x].building.level == 3:
         cells[y][x].building.delete()
         buildings.remove(cells[y][x].building)
         cells[y][x].setBuilding(None)
-    print(buildings)
-
+    else:
+        cells[y][x].building.levelUp(cells[y][x].building.level+1)
+        buildings.append(cells[y][x].building)
 
 def clickR(event):
     x, y = event.x//cellWidth, event.y//cellHeight
-    if cells[y][x].material == Materials.STONE:
-        cells[y][x].setMaterial(Materials.IRON)
-    elif cells[y][x].material == Materials.IRON:
-        cells[y][x].setMaterial(Materials.STONE)
+    if cells[y][x].building is None:
+        cells[y][x].setBuilding(Buildings.BASE)
+        buildings.append(cells[y][x].building)
+    else:
+        cells[y][x].building.delete()
+        buildings.remove(cells[y][x].building)
+        cells[y][x].setBuilding(None)
 
 def tick():
     global ticks

@@ -24,3 +24,6 @@ class building:
     def action(self, ticks):
         if ticks % Stats.MINE['speed'][self.level] == 0:
             self.inventory += 1
+
+    def levelUp(self, level):
+        self.level = level

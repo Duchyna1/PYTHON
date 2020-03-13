@@ -11,7 +11,8 @@ class Stats:
 class Buildings:
     MINE = 'mine'
     CONVEYOR = 'conveyor'
-    all = [MINE]
+    BASE = 'base'
+    all = [MINE, CONVEYOR, BASE]
 
 
 class Materials:

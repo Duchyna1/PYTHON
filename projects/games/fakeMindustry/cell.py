@@ -1,5 +1,6 @@
 from projects.games.fakeMindustry.building import building
 from projects.games.fakeMindustry.conveyor import conveyor
+from projects.games.fakeMindustry.base import base
 from projects.games.fakeMindustry.things import Materials, Buildings
 
 
@@ -36,6 +37,8 @@ class cell:
         elif new == Buildings.CONVEYOR:
             self.building = conveyor(self.parent, self.x, self.y, self.width, self.height, self.orientation,
                                      level=self.level)
+        elif new == Buildings.BASE:
+            self.building = base(self.parent, self.x, self.y, self.width, self.height)
         else:
             self.building = building(self.parent, self.x, self.y, self.width, self.height, new, self.material,
                                      level=self.level)

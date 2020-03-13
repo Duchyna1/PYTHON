@@ -11,24 +11,26 @@ class conveyor:
         self.building = [
             self.parent.create_rectangle(self.x, self.y, self.x+self.width, self.y+self.height, width=0,
                                          fill='dark gray'),
-            self.ball(self.orientation)
+            None
         ]
+        self.ball(self.orientation)
 
     def ball(self, where):
+        self.parent.delete(self.building[1])
         if where == 0:
-            return self.parent.create_rectangle(self.x+self.width*0.4, self.y, self.x+self.width*0.6,
-                                                self.y+self.height*0.5, width=0,
-                                                fill=Stats.CONVEYOR['color'][self.level])
+            self.building[1] = self.parent.create_rectangle(self.x+self.width*0.4, self.y, self.x+self.width*0.6,
+                                                            self.y+self.height*0.5, width=0,
+                                                            fill=Stats.CONVEYOR['color'][self.level])
         elif where == 1:
-            return self.parent.create_rectangle(self.x+self.width*0.5, self.y+self.height*0.4, self.x+self.width,
-                                                self.y+self.height*0.6, width=0,
-                                                fill=Stats.CONVEYOR['color'][self.level])
+            self.building[1] = self.parent.create_rectangle(self.x+self.width*0.5, self.y+self.height*0.4,
+                                                            self.x+self.width, self.y+self.height*0.6, width=0,
+                                                            fill=Stats.CONVEYOR['color'][self.level])
         elif where == 2:
-            return self.parent.create_rectangle(self.x+self.width*0.4, self.y+self.height*0.5, self.x+self.width*0.6,
-                                                self.y+self.height, width=0,
-                                                fill=Stats.CONVEYOR['color'][self.level])
+            self.building[1] = self.parent.create_rectangle(self.x+self.width*0.4, self.y+self.height*0.5,
+                                                            self.x+self.width*0.6, self.y+self.height, width=0,
+                                                            fill=Stats.CONVEYOR['color'][self.level])
         elif where == 3:
-            return self.parent.create_rectangle(self.x, self.y+self.height*0.4, self.x+self.width*0.5,
+            self.building[1] = self.parent.create_rectangle(self.x, self.y+self.height*0.4, self.x+self.width*0.5,
                                                 self.y+self.height*0.6, width=0,
                                                 fill=Stats.CONVEYOR['color'][self.level])
 
@@ -43,3 +45,7 @@ class conveyor:
     def delete(self):
         for b in self.building:
             self.parent.delete(b)
+
+    def levelUp(self, level):
+        self.level = level
+        self.ball(self.orientation)
