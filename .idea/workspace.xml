@@ -38,49 +38,7 @@
       <recent name="C:\Users\Matus\Desktop\GIT\PYTHON\projects\school\skicar2" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main (1)">
-    <configuration name="8" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="PYTHON" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/school/arrays" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/school/arrays/8.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="9" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="PYTHON" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/school/arrays" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/school/arrays/9.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.test">
     <configuration name="conveyor" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PYTHON" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -94,6 +52,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/projects/games/fakeMindustry/conveyor.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="landscape_generator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PYTHON" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/projects/other" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/projects/other/landscape_generator.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -144,13 +123,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PYTHON" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/arcade" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/arcade/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.landscape_generator" />
         <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.conveyor" />
-        <item itemvalue="Python.9" />
-        <item itemvalue="Python.8" />
       </list>
     </recent_temporary>
   </component>
@@ -188,69 +188,69 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1580931785937" />
-    <state width="1345" height="217" key="GridCell.Tab.0.bottom" timestamp="1584023016103">
+    <state width="1345" height="217" key="GridCell.Tab.0.bottom" timestamp="1584134833739">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.bottom.inPresentationMode" timestamp="1581055025639">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.bottom.inPresentationMode/0.0.1366.738@0.0.1366.738" timestamp="1581055025639" />
-    <state width="1345" height="217" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1584023016103" />
-    <state width="1345" height="217" key="GridCell.Tab.0.center" timestamp="1584023016103">
+    <state width="1345" height="217" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1584134833739" />
+    <state width="1345" height="217" key="GridCell.Tab.0.center" timestamp="1584134833739">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.center.inPresentationMode" timestamp="1581055025639">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.center.inPresentationMode/0.0.1366.738@0.0.1366.738" timestamp="1581055025639" />
-    <state width="1345" height="217" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1584023016103" />
-    <state width="1345" height="217" key="GridCell.Tab.0.left" timestamp="1584023016103">
+    <state width="1345" height="217" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1584134833739" />
+    <state width="1345" height="217" key="GridCell.Tab.0.left" timestamp="1584134833739">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.left.inPresentationMode" timestamp="1581055025639">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.left.inPresentationMode/0.0.1366.738@0.0.1366.738" timestamp="1581055025639" />
-    <state width="1345" height="217" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1584023016103" />
-    <state width="1345" height="217" key="GridCell.Tab.0.right" timestamp="1584023016103">
+    <state width="1345" height="217" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1584134833739" />
+    <state width="1345" height="217" key="GridCell.Tab.0.right" timestamp="1584134833739">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.right.inPresentationMode" timestamp="1581055025639">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.right.inPresentationMode/0.0.1366.738@0.0.1366.738" timestamp="1581055025639" />
-    <state width="1345" height="217" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1584023016103" />
-    <state width="1345" height="227" key="GridCell.Tab.1.bottom" timestamp="1583944855492">
+    <state width="1345" height="217" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1584134833739" />
+    <state width="1345" height="227" key="GridCell.Tab.1.bottom" timestamp="1584096767517">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1345" height="227" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1583944855492" />
-    <state width="1345" height="227" key="GridCell.Tab.1.center" timestamp="1583944855492">
+    <state width="1345" height="227" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1584096767517" />
+    <state width="1345" height="227" key="GridCell.Tab.1.center" timestamp="1584096767517">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1345" height="227" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1583944855492" />
-    <state width="1345" height="227" key="GridCell.Tab.1.left" timestamp="1583944855492">
+    <state width="1345" height="227" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1584096767517" />
+    <state width="1345" height="227" key="GridCell.Tab.1.left" timestamp="1584096767516">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1345" height="227" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1583944855492" />
-    <state width="1345" height="227" key="GridCell.Tab.1.right" timestamp="1583944855492">
+    <state width="1345" height="227" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1584096767516" />
+    <state width="1345" height="227" key="GridCell.Tab.1.right" timestamp="1584096767517">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1345" height="227" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1583944855492" />
-    <state x="184" y="12" key="SettingsEditor" timestamp="1583770959050">
+    <state width="1345" height="227" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1584096767517" />
+    <state x="184" y="12" key="SettingsEditor" timestamp="1584118961047">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="184" y="12" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1583770959050" />
-    <state x="378" y="194" key="com.intellij.ide.util.TipDialog" timestamp="1584020031678">
+    <state x="184" y="12" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1584118961047" />
+    <state x="378" y="194" key="com.intellij.ide.util.TipDialog" timestamp="1584112473751">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="378" y="194" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1584020031678" />
+    <state x="378" y="194" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1584112473751" />
     <state x="92" y="92" width="1182" height="554" key="dock-window-1" timestamp="1583777199362">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="92" y="92" width="1182" height="554" key="dock-window-1/0.0.1366.738@0.0.1366.738" timestamp="1583777199362" />
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1583785839608">
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1584097506279">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1583785839608" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1584097506279" />
   </component>
 </project>
