@@ -7,6 +7,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -19,7 +26,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="full.screen.before.presentation.mode" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/projects/school/skicar2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -30,37 +37,18 @@
     </option>
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Matus\Desktop\GIT\PYTHON\school\simple" />
-      <recent name="C:\Users\Matus\Desktop\GIT\PYTHON\projects\games\other" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Matus\Desktop\GIT\PYTHON\projects\school\skicar2" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Matus\Desktop\GIT\PYTHON\projects\math" />
+      <recent name="C:\Users\Matus\Desktop\GIT\PYTHON\arcade\PathFindings" />
+      <recent name="C:\Users\Matus\Desktop\GIT\PYTHON\school\simple" />
+      <recent name="C:\Users\Matus\Desktop\GIT\PYTHON\projects\games\other" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.test">
-    <configuration name="conveyor" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="PYTHON" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/projects/games/fakeMindustry" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/projects/games/fakeMindustry/conveyor.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="landscape_generator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.fet">
+    <configuration name="fet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PYTHON" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -72,28 +60,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/projects/other/landscape_generator.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="PYTHON" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/projects/games/fakeMindustry" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/projects/games/fakeMindustry/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/projects/other/fet.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -110,11 +77,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/projects/school/skicar" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/arcade/PathFindings" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/projects/school/skicar/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/arcade/PathFindings/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -131,11 +98,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/arcade" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/arcade/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -146,11 +113,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.fet" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.landscape_generator" />
-        <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.conveyor" />
       </list>
     </recent_temporary>
   </component>
@@ -172,10 +137,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="275" y="28" key="#Inspections/0.0.1366.738@0.0.1366.738" timestamp="1583838112939" />
-    <state x="137" y="25" width="1092" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583683897050">
+    <state x="137" y="25" width="1092" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584368067113">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="137" y="25" width="1092" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1583683897050" />
+    <state x="137" y="25" width="1092" height="706" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1584368067113" />
     <state x="413" y="117" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581931943928">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -184,42 +149,42 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="402" y="0" key="#fallToClick/0.0.1366.738@0.0.1366.738" timestamp="1583593289061" />
-    <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1580931785937">
+    <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1584539449227">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1580931785937" />
-    <state width="1345" height="217" key="GridCell.Tab.0.bottom" timestamp="1584134833739">
+    <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1584539449227" />
+    <state width="1345" height="217" key="GridCell.Tab.0.bottom" timestamp="1584607799649">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.bottom.inPresentationMode" timestamp="1581055025639">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.bottom.inPresentationMode/0.0.1366.738@0.0.1366.738" timestamp="1581055025639" />
-    <state width="1345" height="217" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1584134833739" />
-    <state width="1345" height="217" key="GridCell.Tab.0.center" timestamp="1584134833739">
+    <state width="1345" height="217" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1584607799649" />
+    <state width="1345" height="217" key="GridCell.Tab.0.center" timestamp="1584607799648">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.center.inPresentationMode" timestamp="1581055025639">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.center.inPresentationMode/0.0.1366.738@0.0.1366.738" timestamp="1581055025639" />
-    <state width="1345" height="217" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1584134833739" />
-    <state width="1345" height="217" key="GridCell.Tab.0.left" timestamp="1584134833739">
+    <state width="1345" height="217" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1584607799648" />
+    <state width="1345" height="217" key="GridCell.Tab.0.left" timestamp="1584607799648">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.left.inPresentationMode" timestamp="1581055025639">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.left.inPresentationMode/0.0.1366.738@0.0.1366.738" timestamp="1581055025639" />
-    <state width="1345" height="217" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1584134833739" />
-    <state width="1345" height="217" key="GridCell.Tab.0.right" timestamp="1584134833739">
+    <state width="1345" height="217" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1584607799648" />
+    <state width="1345" height="217" key="GridCell.Tab.0.right" timestamp="1584607799649">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.right.inPresentationMode" timestamp="1581055025639">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.right.inPresentationMode/0.0.1366.738@0.0.1366.738" timestamp="1581055025639" />
-    <state width="1345" height="217" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1584134833739" />
+    <state width="1345" height="217" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1584607799649" />
     <state width="1345" height="227" key="GridCell.Tab.1.bottom" timestamp="1584096767517">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -240,10 +205,10 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="184" y="12" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1584118961047" />
-    <state x="378" y="194" key="com.intellij.ide.util.TipDialog" timestamp="1584112473751">
+    <state x="378" y="194" key="com.intellij.ide.util.TipDialog" timestamp="1584539440837">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="378" y="194" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1584112473751" />
+    <state x="378" y="194" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1584539440837" />
     <state x="92" y="92" width="1182" height="554" key="dock-window-1" timestamp="1583777199362">
       <screen x="0" y="0" width="1366" height="738" />
     </state>

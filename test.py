@@ -1,23 +1,30 @@
-from opensimplex import OpenSimplex
+#1
+meno = input('Meno: ')
+meno = meno.upper()
+print(meno)
 
-gen = OpenSimplex()
+#2
+nahrdelnik = input('Nahrdelnik: ')
+podobny = nahrdelnik.replace('a', '***')
+print(podobny)
 
-def noise(nx, ny):
-    return gen.noise2d(nx, ny) / 2.0 + 0.5
+#3
+zaznam = input('Zaznam: ')
+slabika = input('Slabika: ')
+print(zaznam.count(slabika))
 
-value = []
-
-width = 5
-height = 5
-
-for y in range(height):
-    value.append([0] * width)
-    for x in range(width):
-        nx = x/width - 0.5
-        ny = y/height - 0.5
-        val = int(noise(nx, ny)*1000)
-        if val > 500:
-            value[y][x] = 1
-        else:
-            value[y][x] = 0
-    print(value[y])
+#4
+veta = input('Veta: ')
+novaVeta = ''
+for znak in veta:
+    if znak == 'z':
+        novaVeta = novaVeta + 'y'
+    elif znak == 'Z':
+        novaVeta = novaVeta + 'Y'
+    elif znak == 'y':
+        novaVeta = novaVeta + 'z'
+    elif znak == 'Y':
+        novaVeta = novaVeta + 'Z'
+    else:
+        novaVeta = novaVeta + znak
+print(novaVeta)

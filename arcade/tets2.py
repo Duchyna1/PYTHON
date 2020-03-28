@@ -1,11 +1,12 @@
 import arcade
-from random import randint
+
+class ball(arcade.Sprite):
+    def setup(self):
+        self.
 
 class MyGame(arcade.Window):
 
     def __init__(self, width, height, title):
-
-        # Call the parent class's init function
         super().__init__(width, height, title)
 
         # Set the background color
