@@ -87,7 +87,7 @@ class GameState(tk.Frame):
         self.canvas.update()
 
     def scoreSetup(self, win):
-        # TODO: restart button
+        # TODO: restart button, continue button
         if win:
             text = gameSettings['score']['text']['text']['win']
         else:
@@ -144,7 +144,7 @@ class GameState(tk.Frame):
                 self.canvas.update()
                 self.loop()
         elif self.state == State.SCORE:
-            # TODO: restart button click
+            # TODO: restart button click, continue button click
             if self.canvasWidgets['scoreQuitButton'].x <= x <= self.canvasWidgets[
                 'scoreQuitButton'].x+self.canvasWidgets['scoreQuitButton'].width:
                 if self.canvasWidgets['scoreQuitButton'].y <= y <= self.canvasWidgets[
