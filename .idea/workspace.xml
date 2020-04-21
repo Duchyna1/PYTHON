@@ -27,8 +27,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="full.screen.before.presentation.mode" value="false" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Python-machine-learning" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Python" />
+>>>>>>> 7193681d0b0e7261c972924df0986c7d0369c233
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -48,8 +53,13 @@
       <recent name="C:\Users\Matus\Desktop\GIT\PYTHON\projects\school\skicar2" />
     </key>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Python.Main">
     <configuration name="1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+=======
+  <component name="RunManager" selected="Python.main (1)">
+    <configuration name="fet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+>>>>>>> 7193681d0b0e7261c972924df0986c7d0369c233
       <module name="PYTHON" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -112,7 +122,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+<<<<<<< HEAD
     <configuration name="fet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+=======
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PYTHON" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/projects/school/skicar" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/projects/school/skicar/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+>>>>>>> 7193681d0b0e7261c972924df0986c7d0369c233
       <module name="PYTHON" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -156,9 +191,13 @@
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
         <item itemvalue="Python.Main" />
         <item itemvalue="Python.MenuState" />
         <item itemvalue="Python.1" />
+=======
+        <item itemvalue="Python.main (1)" />
+>>>>>>> 7193681d0b0e7261c972924df0986c7d0369c233
         <item itemvalue="Python.test" />
         <item itemvalue="Python.fet" />
       </list>
@@ -194,47 +233,87 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="402" y="0" key="#fallToClick/0.0.1366.738@0.0.1366.738" timestamp="1583593289061" />
+<<<<<<< HEAD
     <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1587398158193">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1587398158193" />
     <state width="1345" height="102" key="GridCell.Tab.0.bottom" timestamp="1587484214355">
       <screen x="0" y="0" width="1366" height="738" />
+=======
+    <state x="679" y="139" key="#main_(1)" timestamp="1587106877924">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="679" y="139" key="#main_(1)/0.0.1920.1050@0.0.1920.1050" timestamp="1587106877924" />
+    <state x="463" y="124" key="FileChooserDialogImpl" timestamp="1586329663879">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="463" y="124" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1586329663879" />
+    <state width="1899" height="285" key="GridCell.Tab.0.bottom" timestamp="1587107096269">
+      <screen x="0" y="0" width="1920" height="1050" />
+>>>>>>> 7193681d0b0e7261c972924df0986c7d0369c233
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.bottom.inPresentationMode" timestamp="1581055025639">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.bottom.inPresentationMode/0.0.1366.738@0.0.1366.738" timestamp="1581055025639" />
+<<<<<<< HEAD
     <state width="1345" height="102" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1587484214355" />
     <state width="1899" height="102" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1587483154583" />
     <state width="1345" height="102" key="GridCell.Tab.0.center" timestamp="1587484214355">
       <screen x="0" y="0" width="1366" height="738" />
+=======
+    <state width="1345" height="121" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1586174093792" />
+    <state width="1899" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1587107096269" />
+    <state width="1899" height="285" key="GridCell.Tab.0.center" timestamp="1587107096269">
+      <screen x="0" y="0" width="1920" height="1050" />
+>>>>>>> 7193681d0b0e7261c972924df0986c7d0369c233
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.center.inPresentationMode" timestamp="1581055025639">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.center.inPresentationMode/0.0.1366.738@0.0.1366.738" timestamp="1581055025639" />
+<<<<<<< HEAD
     <state width="1345" height="102" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1587484214355" />
     <state width="1899" height="102" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1587483154582" />
     <state width="1345" height="102" key="GridCell.Tab.0.left" timestamp="1587484214355">
       <screen x="0" y="0" width="1366" height="738" />
+=======
+    <state width="1345" height="121" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1586174093792" />
+    <state width="1899" height="285" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1587107096269" />
+    <state width="1899" height="285" key="GridCell.Tab.0.left" timestamp="1587107096269">
+      <screen x="0" y="0" width="1920" height="1050" />
+>>>>>>> 7193681d0b0e7261c972924df0986c7d0369c233
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.left.inPresentationMode" timestamp="1581055025639">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.left.inPresentationMode/0.0.1366.738@0.0.1366.738" timestamp="1581055025639" />
+<<<<<<< HEAD
     <state width="1345" height="102" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1587484214355" />
     <state width="1899" height="102" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1587483154582" />
     <state width="1345" height="102" key="GridCell.Tab.0.right" timestamp="1587484214355">
       <screen x="0" y="0" width="1366" height="738" />
+=======
+    <state width="1345" height="121" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1586174093792" />
+    <state width="1899" height="285" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1587107096269" />
+    <state width="1899" height="285" key="GridCell.Tab.0.right" timestamp="1587107096269">
+      <screen x="0" y="0" width="1920" height="1050" />
+>>>>>>> 7193681d0b0e7261c972924df0986c7d0369c233
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.right.inPresentationMode" timestamp="1581055025639">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="2" key="GridCell.Tab.0.right.inPresentationMode/0.0.1366.738@0.0.1366.738" timestamp="1581055025639" />
+<<<<<<< HEAD
     <state width="1345" height="102" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1587484214355" />
     <state width="1899" height="102" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1587483154582" />
     <state width="1345" height="226" key="GridCell.Tab.1.bottom" timestamp="1587392728976">
+=======
+    <state width="1345" height="121" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1586174093792" />
+    <state width="1899" height="285" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1587107096269" />
+    <state width="1345" height="227" key="GridCell.Tab.1.bottom" timestamp="1585838299023">
+>>>>>>> 7193681d0b0e7261c972924df0986c7d0369c233
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state width="1345" height="226" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1587392728976" />
@@ -252,6 +331,7 @@
     <state width="1345" height="226" key="GridCell.Tab.1.right" timestamp="1587392728976">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
+<<<<<<< HEAD
     <state width="1345" height="226" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1587392728976" />
     <state width="1358" height="351" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1587212162223" />
     <state x="184" y="12" key="SettingsEditor" timestamp="1587313244680">
@@ -260,8 +340,19 @@
     <state x="184" y="12" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1587313244680" />
     <state x="378" y="194" key="com.intellij.ide.util.TipDialog" timestamp="1586329327970">
       <screen x="0" y="0" width="1366" height="738" />
+=======
+    <state width="1345" height="227" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1585838299023" />
+    <state x="259" y="17" key="SettingsEditor" timestamp="1587107000585">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="184" y="12" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1584118961047" />
+    <state x="259" y="17" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1587107000585" />
+    <state x="531" y="276" key="com.intellij.ide.util.TipDialog" timestamp="1587199505732">
+      <screen x="0" y="0" width="1920" height="1050" />
+>>>>>>> 7193681d0b0e7261c972924df0986c7d0369c233
     </state>
     <state x="378" y="194" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1586329327970" />
+    <state x="531" y="276" key="com.intellij.ide.util.TipDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1587199505732" />
     <state x="92" y="92" width="1182" height="554" key="dock-window-1" timestamp="1583777199362">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
