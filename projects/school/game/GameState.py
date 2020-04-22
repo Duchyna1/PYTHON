@@ -18,6 +18,8 @@ class GameState(tk.Frame):
         self.master = master
         self.pack()
 
+        self.WON = False
+
         self.state = State.PRE
         self.canvasWidgets = {}
         self.score = 0
@@ -64,9 +66,9 @@ class GameState(tk.Frame):
         self.canvasWidgets['pauseQuitButton'] = Button(self.canvas,
                                                        0,
                                                        0,
+                                                       gameSettings[State.PAUSE]['quitButton']['width'],
                                                        gameSettings[State.PAUSE]['quitButton']['height'],
                                                        gameSettings[State.PAUSE]['quitButton']['border'],
-                                                       gameSettings[State.PAUSE]['quitButton']['width'],
                                                        gameSettings[State.PAUSE]['quitButton']['color'],
                                                        gameSettings[State.PAUSE]['quitButton']['text']
                                                        )
@@ -87,20 +89,37 @@ class GameState(tk.Frame):
         self.canvas.update()
 
     def scoreSetup(self, win):
-        # TODO: restart button, continue button
+        self.WON = True
         if win:
             text = gameSettings['score']['text']['text']['win']
         else:
             text = gameSettings['score']['text']['text']['lose']
         self.canvasWidgets['scoreQuitButton'] = Button(self.canvas,
-                                                       0,
-                                                       0,
+                                                       2,
+                                                       2,
                                                        gameSettings[State.SCORE]['quitButton']['width'],
                                                        gameSettings[State.SCORE]['quitButton']['height'],
                                                        gameSettings[State.SCORE]['quitButton']['border'],
                                                        gameSettings[State.SCORE]['quitButton']['color'],
-                                                       gameSettings[State.SCORE]['quitButton']['text']
-                                                       )
+                                                       gameSettings[State.SCORE]['quitButton']['text'])
+
+        self.canvasWidgets['scoreRestartButton'] = Button(self.canvas,
+                                                          102,
+                                                          2,
+                                                          gameSettings[State.SCORE]['restartButton']['width'],
+                                                          gameSettings[State.SCORE]['restartButton']['height'],
+                                                          gameSettings[State.SCORE]['restartButton']['border'],
+                                                          gameSettings[State.SCORE]['restartButton']['color'],
+                                                          gameSettings[State.SCORE]['restartButton']['text'])
+
+        self.canvasWidgets['scoreContinueButton'] = Button(self.canvas,
+                                                           202,
+                                                           2,
+                                                           gameSettings[State.SCORE]['continueButton']['width'],
+                                                           gameSettings[State.SCORE]['continueButton']['height'],
+                                                           gameSettings[State.SCORE]['continueButton']['border'],
+                                                           gameSettings[State.SCORE]['continueButton']['color'],
+                                                           gameSettings[State.SCORE]['continueButton']['text'])
 
         self.canvasWidgets['scoreRect'] = self.canvas.create_rectangle(gameSettings['canvas']['width'] // 2-150,
                                                                        gameSettings['canvas']['height'] // 2-50,
@@ -144,12 +163,31 @@ class GameState(tk.Frame):
                 self.canvas.update()
                 self.loop()
         elif self.state == State.SCORE:
-            # TODO: restart button click, continue button click
             if self.canvasWidgets['scoreQuitButton'].x <= x <= self.canvasWidgets[
                 'scoreQuitButton'].x+self.canvasWidgets['scoreQuitButton'].width:
                 if self.canvasWidgets['scoreQuitButton'].y <= y <= self.canvasWidgets[
                     'scoreQuitButton'].y+self.canvasWidgets['scoreQuitButton'].height:
                     self.master.destroy()
+            elif self.canvasWidgets['scoreRestartButton'].x <= x <= self.canvasWidgets[
+                'scoreRestartButton'].x+self.canvasWidgets['scoreRestartButton'].width:
+                if self.canvasWidgets['scoreRestartButton'].y <= y <= self.canvasWidgets[
+                    'scoreRestartButton'].y+self.canvasWidgets['scoreRestartButton'].height:
+                    self.canvas.delete('all')
+                    self.score = 0
+                    self.scoreLabel.configure(text=self.score)
+                    self.state = State.PRE
+                    self.preSetup()
+            elif self.canvasWidgets['scoreContinueButton'].x <= x <= self.canvasWidgets[
+                'scoreContinueButton'].x+self.canvasWidgets['scoreContinueButton'].width:
+                if self.canvasWidgets['scoreContinueButton'].y <= y <= self.canvasWidgets[
+                    'scoreContinueButton'].y+self.canvasWidgets['scoreContinueButton'].height:
+                    self.state = State.GAME
+                    self.canvasWidgets['scoreQuitButton'].remove()
+                    self.canvasWidgets['scoreRestartButton'].remove()
+                    self.canvasWidgets['scoreContinueButton'].remove()
+                    self.canvas.delete(self.canvasWidgets['scoreRect'])
+                    self.canvas.delete(self.canvasWidgets['scoreText'])
+                    self.loop()
 
     def motion(self, event=None):
         x = event.x
@@ -172,12 +210,16 @@ class GameState(tk.Frame):
                 self.balls.append(generateBall(self.canvas))
 
     def loop(self, event=None):
+        self.canvas.update()
+
         if self.score > gameSettings['toWin']:
-            self.state = State.SCORE
-            self.scoreSetup(True)
+            if not self.WON:
+                self.state = State.SCORE
+                self.scoreSetup(True)
         if self.score < gameSettings['toLose']:
-            self.state = State.SCORE
-            self.scoreSetup(False)
+            if not self.WON:
+                self.state = State.SCORE
+                self.scoreSetup(False)
 
         if self.state == State.GAME:
             for ball in self.balls:
@@ -195,5 +237,4 @@ class GameState(tk.Frame):
                     self.balls.remove(ball)
                     self.balls.append(generateBall(self.canvas))
 
-            self.canvas.update()
             self.canvas.after(gameSettings[State.GAME]['tickSpeed'], self.loop)

@@ -97,11 +97,25 @@ settings = {
                     'color': '#7f7f7f'
                 },
                 'quitButton': {
-                    'width': 50,
+                    'width': 100,
                     'height': 50,
-                    'border': 0,
+                    'border': 1,
                     'color': '#afafaf',
                     'text': 'QUIT'
+                },
+                'restartButton': {
+                    'width':  100,
+                    'height': 50,
+                    'border': 1,
+                    'color':  '#afafaf',
+                    'text':   'RESTART'
+                },
+                'continueButton': {
+                    'width':  100,
+                    'height': 50,
+                    'border': 1,
+                    'color':  '#afafaf',
+                    'text':   'CONTINUE'
                 },
             }
         },
