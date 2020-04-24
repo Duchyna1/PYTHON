@@ -64,13 +64,23 @@ class GameState(tk.Frame):
 
     def pauseSetup(self):
         self.canvasWidgets['pauseQuitButton'] = Button(self.canvas,
-                                                       0,
-                                                       0,
+                                                       2,
+                                                       2,
                                                        gameSettings[State.PAUSE]['quitButton']['width'],
                                                        gameSettings[State.PAUSE]['quitButton']['height'],
                                                        gameSettings[State.PAUSE]['quitButton']['border'],
                                                        gameSettings[State.PAUSE]['quitButton']['color'],
                                                        gameSettings[State.PAUSE]['quitButton']['text']
+                                                       )
+
+        self.canvasWidgets['pauseRestartButton'] = Button(self.canvas,
+                                                       102,
+                                                       2,
+                                                       gameSettings[State.PAUSE]['restartButton']['width'],
+                                                       gameSettings[State.PAUSE]['restartButton']['height'],
+                                                       gameSettings[State.PAUSE]['restartButton']['border'],
+                                                       gameSettings[State.PAUSE]['restartButton']['color'],
+                                                       gameSettings[State.PAUSE]['restartButton']['text']
                                                        )
 
         self.canvasWidgets['pauseRect'] = self.canvas.create_rectangle(gameSettings['canvas']['width'] // 2 - 150,
@@ -152,6 +162,15 @@ class GameState(tk.Frame):
                 if self.canvasWidgets['pauseQuitButton'].y <= y <= self.canvasWidgets[
                     'pauseQuitButton'].y+self.canvasWidgets['pauseQuitButton'].height:
                     self.master.destroy()
+            elif self.canvasWidgets['pauseRestartButton'].x <= x <= self.canvasWidgets[
+                'pauseRestartButton'].x+self.canvasWidgets['pauseRestartButton'].width:
+                if self.canvasWidgets['pauseRestartButton'].y <= y <= self.canvasWidgets[
+                    'pauseRestartButton'].y+self.canvasWidgets['pauseRestartButton'].height:
+                    self.canvas.delete('all')
+                    self.score = 0
+                    self.scoreLabel.configure(text=self.score)
+                    self.state = State.PRE
+                    self.preSetup()
             else:
                 self.state = State.GAME
                 self.canvas.delete(self.canvasWidgets['pauseText'])
@@ -160,6 +179,8 @@ class GameState(tk.Frame):
                 self.canvasWidgets['pauseRect'] = None
                 self.canvasWidgets['pauseQuitButton'].remove()
                 self.canvasWidgets['pauseQuitButton'] = None
+                self.canvasWidgets['pauseRestartButton'].remove()
+                self.canvasWidgets['pauseRestartButton'] = None
                 self.canvas.update()
                 self.loop()
         elif self.state == State.SCORE:

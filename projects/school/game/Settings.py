@@ -76,12 +76,19 @@ settings = {
                     'color': '#7f7f7f'
                 },
                 'quitButton': {
-                    'width': 50,
+                    'width': 100,
                     'height': 50,
                     'border': 0,
                     'color': '#afafaf',
                     'text': 'QUIT'
                 },
+                'restartButton': {
+                    'width': 100,
+                    'height': 50,
+                    'border': 0,
+                    'color': '#afafaf',
+                    'text': 'RESTART'
+                }
             },
             'score': {
                 'text': {
@@ -129,9 +136,9 @@ settings = {
                 'height': 250
             },
             'text': {
-                'text':  'Text', # TODO: tutorial text
+                'text':  'Move with mouse\nClick to pause\nTry to catch all white balls\nTry not to catch black balls',
                 'color': '#ffffff',
-                'font':  ("Purisa", 20)
+                'font':  ("Purisa", 15)
             },
             'backButton': {
                 'text': 'BACK',

@@ -27,8 +27,8 @@ class TutorialState(tk.Frame):
 
         self.backButton = tk.Button(self)
         self.backButton['text'] =               tutorialSettings['backButton']['text']
-        self.on['font'] =               tutorialSettings['backButton']['font']
-        self.backButton['pabackButtdy'] =               tutorialSettings['backButton']['pady']
+        self.backButton['font'] =               tutorialSettings['backButton']['font']
+        self.backButton['pady'] =               tutorialSettings['backButton']['pady']
         self.backButton['width'] =              tutorialSettings['backButton']['width']
         self.backButton['activebackground'] =   tutorialSettings['backButton']['activebackground']
         self.backButton['bd'] =                 tutorialSettings['backButton']['bd']
