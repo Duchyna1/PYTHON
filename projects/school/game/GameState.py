@@ -167,6 +167,7 @@ class GameState(tk.Frame):
                 if self.canvasWidgets['pauseRestartButton'].y <= y <= self.canvasWidgets[
                     'pauseRestartButton'].y+self.canvasWidgets['pauseRestartButton'].height:
                     self.canvas.delete('all')
+                    setG(5)
                     self.score = 0
                     self.scoreLabel.configure(text=self.score)
                     self.state = State.PRE
@@ -194,6 +195,7 @@ class GameState(tk.Frame):
                 if self.canvasWidgets['scoreRestartButton'].y <= y <= self.canvasWidgets[
                     'scoreRestartButton'].y+self.canvasWidgets['scoreRestartButton'].height:
                     self.canvas.delete('all')
+                    setG(5)
                     self.score = 0
                     self.scoreLabel.configure(text=self.score)
                     self.state = State.PRE

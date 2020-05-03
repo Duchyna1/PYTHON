@@ -1,0 +1,22 @@
+import enum
+
+# WINDOW
+WINDOW_DIMENSIONS = (500, 500)
+WINDOW_COLOR = (0, 0, 0)
+
+# APPLE
+APPLE_COLOR = (255, 0, 0)
+APPLE_SIZE = 20
+
+# SNEK
+DEFAULT_SNEK_SIZE = 10
+SNEK_TILE_SIZE = 20
+SNEK_COLOR = (0, 255, 0)
+
+# DIRECTIONS
+class Direction(enum.Enum):
+    NONE = 0
+    UP = 1
+    DOWN = 2
+    LEFT = 3
+    RIGHT = 4
