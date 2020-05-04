@@ -1,0 +1,14 @@
+import enum
+
+# WINDOW
+WINDOW_DIMENSIONS = (600, 600)
+WINDOW_COLOR = (255, 255, 255)
+WINDOW_LABEL = 'CONNECT 4'
+# CELL
+CELL_BORDER_COLOR = (0, 0, 255)
+CELL_SIZE = 600//8
+
+class CellState(enum.Enum):
+    NONE = 0,
+    RED = 1,
+    YELLOW = 2

@@ -4,6 +4,7 @@ from snek import Snek
 from globals import *
 
 pygame.init()
+pygame.display.set_caption(WINDOW_LABEL)
 screen = pygame.display.set_mode(WINDOW_DIMENSIONS)
 running = True
 clock = pygame.time.Clock()
