@@ -46,7 +46,7 @@
 # 2
 import tkinter
 
-canvas = tkinter.Canvas(width=700, height=500)
+canvas = tkinter.Canvas(width=1000, height=500)
 canvas.pack()
 subor = open('kresli.txt', 'r')
 
@@ -61,21 +61,11 @@ while riadok:
 
     riadok = subor.readline()
 
-zaciatokX = 0
-zaciatokY = 0
-
-def click(miesto):
-    global zaciatokX, zaciatokY
-    zaciatokX, zaciatokY = miesto.x, miesto.y
-
-
 def tahanieMiskou(miesto):
-    global zaciatokX, zaciatokY
     x, y = miesto.x, miesto.y
-    canvas.create_line(zaciatokX, zaciatokY, x, y)
+    canvas.create_oval(x-2, y-2, x+2, y+2, fill='black')
 
 
 canvas.bind_all("<B1-Motion>", tahanieMiskou)
-canvas.bind_all("<Button-1>", click)
 
 canvas.mainloop()
