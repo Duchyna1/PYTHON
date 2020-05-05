@@ -30,31 +30,96 @@ def mouseMotion():
 
 def mouseClick():
     return event.type == pygame.MOUSEBUTTONDOWN and event.button == 1
-###########
+
+#####################################################################
 
 def drawAll():
     indicator.draw()
 
 def connected(cell):
     x, y = cell.x//CELL_SIZE, (cell.y-CELL_SIZE)//CELL_SIZE
+    connected = True
     # DOWN
-    if y <= 4:
+    try:
         for i in range(1, 4):
             if cells[y+i][x].state != cell.state:
-                return False
-    else:
-        return False
-    return True
+                connected = False
+    except:
+        connected = False
+    if connected:
+        # debugging
+        # print('DOWN')
+        return connected
+
+    # SIDES
+    for i in range(-4, 0):
+        connected = True
+        for j in range(1, 5):
+            try:
+                fistCell = cells[y][x+i+j]
+                # debugging
+                # print('SIDE' ,x, x+i+j, y, y, fistCell.state)
+                if fistCell.state != cell.state:
+                    connected = False
+            except:
+                connected = False
+        # debugging
+        # print()
+        if connected:
+            # debugging
+            # print('SIDE')
+            return connected
+
+    # DIAGONAL LEFT DOWN
+    for i in range(-4, 0):
+        connected = True
+        for j in range(1, 5):
+            try:
+                fistCell = cells[y+i+j][x+i+j]
+                # debugging
+                # print('DLD' ,x+i+j, x, y+i+j, y, fistCell.state)
+                if fistCell.state != cell.state:
+                    connected = False
+            except:
+                connected = False
+        # debugging
+        # print()
+        if connected:
+            # debugging
+            # print('DIAGONAL LEFT DOWN')
+            return connected
+
+    # DIAGONAL RIGHT UP
+    for i in range(-4, 0):
+        connected = True
+        for j in range(1, 5):
+            try:
+                fistCell = cells[y-i-j][x+i+j]
+                # debugging
+                # print('DRU', x+i+j, x, y-i-j, y, fistCell.state)
+                if fistCell.state != cell.state:
+                    connected = False
+            except:
+                connected = False
+        # debugging
+        # print()
+        if connected:
+            # debugging
+            # print('DIAGONAL RIGHT UP')
+            return connected
 
 while running:
     for event in pygame.event.get():
         # QUIT
         if quitGame():
             running = False
+
         # MOVING INDICATOR
         if mouseMotion():
             pos = pygame.mouse.get_pos()
             indicator.move(pos[0])
+
+        # PLACING IDK CIRCLES?
         if mouseClick():
             pos = pygame.mouse.get_pos()
             indicator.switchColors()
@@ -64,13 +129,11 @@ while running:
                     cells[y][x].setState(red)
                     if connected(cells[y][x]):
                         print(red, 'YAY!')
-                        break
-                    else:
-                        red = not red
-                        break
+                    red = not red
+                    break
+
 
     drawAll()
 
     # UPDATE SCREEN
     pygame.display.flip()
-
