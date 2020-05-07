@@ -1,37 +1,39 @@
-import pygame
-
-
-class Tank(pygame.sprite.Sprite):
-    def __init__(self, pScreen, pX, pY, pRotation, pColor, pBullet):
-        self.screen = pScreen
-        self.x, self.y = pX, pY
-        self.color = pColor
-        self.bullet = pBullet
-        self.rotation = pRotation
-
-        self.WIDTH, self.HEIGHT = 25, 25
-
+import pygame, sys, time, random
+from pygame.locals import *
+from Colours import *
+from PIL import Image, ImageDraw
+class MySprite(pygame.sprite.Sprite):
+    def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-
-        self.image = pygame.Surface([self.WIDTH, self.HEIGHT])
-        self.image.fill(self.color)
-
+        self.image = pygame.image.load('Plane.gif').convert()
         self.rect = self.image.get_rect()
-
-    def update(self, *args):
-        pos = pygame.mouse.get_pos()
-        self.rect.center = pos
-
-    def rotate(self, pRotation):
-        center = self._Rect.center
+        self.x = 0
+        self.y = 0
+    def draw(self,surface):
+            surface.blit(self.image,(self.x,self.y))
+    def onKeyPress(self):
+        key = pygame.key.get_pressed()
+        distance = 5
+        if key[ord('s')] or key[pygame.K_DOWN]: #down
+            self.y += distance
+        elif key[ord('w')] or key[pygame.K_UP]: #up
+            self.y -= distance
+        if key[ord('d')] or key[pygame.K_RIGHT]: #right
+            self.x += distance
+        elif key[ord('a')] or key[pygame.K_LEFT]: #left
+            self.x -= distance
         rotate = pygame.transform.rotate
-        self.image = rotate(self.rotation, pRotation)
-        self.rotation += pRotation
-        self.rect = self.image.get_rect(center=center)
-
-    def shoot(self):
-        self.bullet.shoot()
-
-
-    def destroy(self):
-        super().kill()
+        if key[ord('e')]:
+            self.image = rotate(self.image, 10)
+        elif key[ord('q')]:
+            self.image = rotate(self.image, -10)
+class Event(object):
+    def __init__(self):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    pygame.quit()
+                    sys.exit()
