@@ -79,9 +79,10 @@ def generateProblem():
     file.close()
     canvas.itemconfig(textStats[4], text = priklady)
     correct = []
-    hidden = randint(0, 7)
-    if hidden > 1:
-        hidden = 2
+    #hidden = randint(0, 7)
+    #if hidden > 1:
+    #    hidden = 2
+    hidden = 2
     if minus:
         x = randint(0, 1)
         if x == 0:
