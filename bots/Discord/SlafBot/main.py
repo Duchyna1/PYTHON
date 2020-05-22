@@ -10,7 +10,7 @@ from calendarStuff import *
 from dateStuff import *
 from redditStuff import *
 
-TOKEN = 'NzEwMzkzNjE0NTA4ODg0MDU5.XrzzwA.dSIfKaiT04dwSJlbIWOFTIqQeJw'
+TOKEN = 'NzEwMzkzNjE0NTA4ODg0MDU5.XsN78Q.53naFkdexm3vUwJFjcdXHFGlY2o'
 
 client = discord.Client()
 server = None
@@ -95,7 +95,9 @@ async def memes():
     global server
     while not client.is_closed():
         channel = server.get_channel(710108232219099176)
-        await channel.send(getMemes(1))
+        await channel.send(getMemes(1, 'PewdiepieSubmissions'))
+        await channel.send(getMemes(1, 'wholesomememes'))
+        await channel.send(getMemes(1, 'tumblr'))
         await asyncio.sleep(60 * 30)
 
 
