@@ -95,9 +95,9 @@ async def memes():
     global server
     while not client.is_closed():
         channel = server.get_channel(710108232219099176)
-        await channel.send(getMemes(1, 'PewdiepieSubmissions'))
         await channel.send(getMemes(1, 'wholesomememes'))
         await channel.send(getMemes(1, 'tumblr'))
+        await channel.send(getMemes(1, 'cats'))
         await asyncio.sleep(60 * 30)
 
 
