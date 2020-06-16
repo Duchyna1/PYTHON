@@ -118,4 +118,6 @@ async def on_ready():
 bot.add_cog(KneecapsStuff(bot))
 bot.add_cog(OnlyForServerOwner(bot))
 bot.add_cog(Epic(bot))
-bot.run('NzIyMTgxODQ1MTcyNjE3Mjk5.XufXww.cq32036991EtTcbSPjA4RP2FM6A')
+bot.run('')
+#NzIyMTgxODQ1MTcyNjE3Mjk5.Xuku
+#Kw.7b6vlaCpnzHSNA7zVPlne1gz_ZE
