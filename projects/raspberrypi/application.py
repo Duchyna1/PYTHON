@@ -47,27 +47,28 @@ class Launcher(tk.Frame):
         self.pullButton['command'] = self.pullButtonClick
         self.pullButton.pack()
 
-        self.label = tk.Label(self)
-        self.label['text'] = 'Ready!'
+        self.text = tk.StringVar()
+        self.label = tk.Label(self, textvariable=self.text)
+        self.text.set('Ready!')
         self.label.pack()
 
     def pushButtonClick(self):
-        self.label['text'] = 'Wait...'
+        self.text.set('Wait...')
         message = self.pushEntry.get()
         if message == '':
-            self.label['text'] = 'Invalid push message'
+            self.text.set('Invalid push message')
         else:
             push(message)
-            self.label['text'] = 'DONE!'
+            self.text.set('DONE!')
 
     def pullButtonClick(self):
+        self.text.set('Wait...')
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-            self.label['text'] = 'Wait...'
             s.connect((HOST, PORT))
             send(s, 'pull')
             data = s.recv(1024).decode("utf-8")
             if data == 'done':
-                self.label['text'] = 'DONE!'
+                self.text.set('DONE!')
 
 
 root = tk.Tk()

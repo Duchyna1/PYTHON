@@ -5,10 +5,11 @@ PORT = 65432
 
 
 def pull():
-    os.system('cd Desktop/GIT/PYTHON')
-    os.system('git fetch --all')
-    os.system('git reset --hard origin/master')
-    os.system('git pull origin master')
+    print('pull')
+    # os.system('cd Desktop/GIT/PYTHON')
+    # os.system('git fetch --all')
+    # os.system('git reset --hard origin/master')
+    # os.system('git pull origin master')
 
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
