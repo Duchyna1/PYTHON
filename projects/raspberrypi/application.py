@@ -52,6 +52,11 @@ class Launcher(tk.Frame):
         self.text.set('Ready!')
         self.label.pack()
 
+        self.quitButton = tk.Button(self)
+        self.quitButton['text'] = "QUIT"
+        self.quitButton['command'] = self.quitButtonClick
+        self.quitButton.pack()
+
     def pushButtonClick(self):
         self.text.set('Wait...')
         self.update()
@@ -75,6 +80,8 @@ class Launcher(tk.Frame):
                 self.text.set('DONE!')
                 self.update()
 
+    def quitButtonClick(self):
+        self.master.destroy()
 
 root = tk.Tk()
 root.title('Raspberry pi controller')
