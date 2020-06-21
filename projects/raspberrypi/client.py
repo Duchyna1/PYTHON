@@ -9,3 +9,5 @@ def send(messange):
         s.sendall(str.encode(messange))
 
 send('Hello')
+send('Wait')
+send('Hello2')
