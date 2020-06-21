@@ -13,4 +13,4 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         while True:
             data = conn.recv(1024)
             if data:
-                print(data)
+                print(data.decode("utf-8"))
