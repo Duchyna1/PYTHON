@@ -29,6 +29,9 @@ class Launcher(tk.Frame):
         self.create_widgets()
 
     def create_widgets(self):
+        self.pushEntry = tk.Entry(self)
+        self.pushEntry.pack()
+
         self.pushButton = tk.Button(self)
         self.pushButton['text'] = "PUSH"
         # self.pushButton['font'] = ("Purisa", 20)
@@ -41,9 +44,6 @@ class Launcher(tk.Frame):
         self.pushButton['command'] = self.pushButtonClick
         self.pushButton.pack()
 
-        self.pushEntry = tk.Entry(self)
-        self.pushEntry.pack()
-
         self.label = tk.Label(self)
         self.label['text'] = 'Ready!'
         self.label.pack()
@@ -54,6 +54,7 @@ class Launcher(tk.Frame):
             self.label['text'] = 'Invalid push message'
         else:
             push(message)
+            self.label['text'] = 'DONE!'
 
 root = tk.Tk()
 root.title('Raspberry pi controller')
