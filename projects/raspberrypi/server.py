@@ -22,5 +22,6 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 print(data.decode("utf-8"))
                 if data == 'pull':
                     pull()
+                    conn.sendall(b'done')
                 s.listen()
                 conn, addr = s.accept()

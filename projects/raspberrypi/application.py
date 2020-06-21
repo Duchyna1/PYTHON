@@ -7,11 +7,9 @@ HOST = '127.0.0.1'  # '192.168.0.38'
 PORT = 65432
 
 
-def send(message):
-    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-        s.connect((HOST, PORT))
-        s.sendall(str.encode(message))
-        time.sleep(0.5)
+def send(s, message):
+    s.sendall(str.encode(message))
+    time.sleep(0.5)
 
 
 def push(message):
@@ -44,17 +42,33 @@ class Launcher(tk.Frame):
         self.pushButton['command'] = self.pushButtonClick
         self.pushButton.pack()
 
+        self.pullButton = tk.Button(self)
+        self.pullButton['text'] = "PULL"
+        self.pullButton['command'] = self.pullButtonClick
+        self.pullButton.pack()
+
         self.label = tk.Label(self)
         self.label['text'] = 'Ready!'
         self.label.pack()
 
     def pushButtonClick(self):
+        self.label['text'] = 'Wait...'
         message = self.pushEntry.get()
         if message == '':
             self.label['text'] = 'Invalid push message'
         else:
             push(message)
             self.label['text'] = 'DONE!'
+
+    def pullButtonClick(self):
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            self.label['text'] = 'Wait...'
+            s.connect((HOST, PORT))
+            send(s, 'pull')
+            data = s.recv(1024).decode("utf-8")
+            if data == 'done':
+                self.label['text'] = 'DONE!'
+
 
 root = tk.Tk()
 root.title('Raspberry pi controller')
