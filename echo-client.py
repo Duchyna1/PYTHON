@@ -6,6 +6,6 @@ PORT = 65432
 def send(messange):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.connect((HOST, PORT))
-        s.sendall(bin(messange))
+        s.sendall(str.encode(messange))
 
 send('Hello')
