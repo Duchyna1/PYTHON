@@ -3,7 +3,7 @@ import socket
 import time
 import os
 
-HOST = '127.0.0.1'  # '192.168.0.38'
+HOST = '192.168.0.38' # '127.0.0.1'
 PORT = 65432
 
 
