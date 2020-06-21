@@ -1,17 +1,17 @@
 import socket
 import time
 
-HOST = '192.168.0.38'
+HOST = '127.0.0.1' #'192.168.0.38'
 PORT = 65432
 
 
-def send(s, messange):
-    s.connect((HOST, PORT))
-    s.sendall(str.encode(messange))
-    time.sleep(0.5)
+def send(message):
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.connect((HOST, PORT))
+        s.sendall(str.encode(message))
+        time.sleep(0.5)
 
 
-with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-    send(s, 'Hello')
-    send(s, 'Wait')
-    send(s, 'Hello2')
+send('Hello')
+send('Wait')
+send('Hello2')
