@@ -48,11 +48,11 @@ class Launcher(tk.Frame):
 
     def modButtonClick(self):
         self.master.destroy()
-        os.system('picomc instance instancename launch')
+        os.system('picomc instance mod launch')
 
     def vanillaButtonClick(self):
         self.master.destroy()
-        os.system('picomc instance mod launch')
+        os.system('picomc instance instancename launch')
 
     def quitButtonClick(self):
         self.master.destroy()

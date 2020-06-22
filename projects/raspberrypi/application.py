@@ -76,6 +76,7 @@ class Launcher(tk.Frame):
             s.connect((HOST, PORT))
             send(s, 'pull')
             data = s.recv(1024).decode("utf-8")
+            print('data')
             if data == 'done':
                 self.text.set('DONE!')
                 self.update()
